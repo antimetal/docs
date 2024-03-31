@@ -16,15 +16,67 @@ const sidebars: SidebarsConfig = {
       type: "category",
       collapsible: false,
       collapsed: false,
+      label: "Onboarding",
+      items: ["onboarding/overview"],
+    },
+    {
+      type: "category",
+      collapsible: false,
+      collapsed: false,
       label: "Get Started",
       items: [
         "index",
         {
           type: "category",
-          collapsible: false,
+          collapsible: true,
           collapsed: false,
-          label: "Onboarding",
-          items: ["onboarding/overview"],
+          label: "Product",
+          items: [
+          {
+            type: "category",
+            collapsible: true,
+            collapsed: false,
+            label: "Savings",
+            items: [
+              "product/savings/volume_discounts", 
+              "product/savings/savings_plans", 
+              "product/savings/reserved_instances",
+              "product/savings/tax",
+            ]},
+          {
+            type: "category",
+            collapsible: true,
+            collapsed: false,
+            label: "Guardrails",
+            items: [
+              "product/guardrails/anomalies", 
+              "product/guardrails/rightsizing"
+            ]}
+            ,
+            {
+              type: "category",
+              collapsible: true,
+              collapsed: false,
+              label: "Visibility",
+              items: [
+                "product/visibility/dashboard",
+                "product/visibility/budgets", 
+              ]}
+          ],
+        },
+        {
+          type: "category",
+          collapsible: true,
+          collapsed: false,
+          label: "Security and Access Control",
+          items: ["security/iam_roles"]
+        },
+        {
+          type: "category",
+          collapsible: true,
+          collapsed: false,
+          label: "Billing",
+          items: ["billing/invoices"]
         },
       ],
     },
