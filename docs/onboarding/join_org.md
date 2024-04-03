@@ -14,7 +14,7 @@ If you have a single account that is not in an organization, you can skip direct
 If you already have your own AWS organization, you will have to destructure it to join Antimetal's organization.
 
 :::info
-Learn more about the implications of destructuring your organization [here](/faq/organization_restructuring).
+Learn more about the implications of destructuring your organization [here](/faq).
 :::
 
 ### Step 1: Remove Sub-Accounts

@@ -7,7 +7,7 @@ sidebar_label: IAM Role Creation
 
 # IAM Role Creation
 
-The next step is to connect your AWS account to Antimetal. This is done by creating an IAM role in your AWS account that Antimetal can assume to access your billing data. To learn more about the "Cross Account IAM Role" that Antimetal uses, see [this page](security/iam_roles_explained).
+The next step is to connect your AWS account to Antimetal. This is done by creating an IAM role in your AWS account that Antimetal can assume to access your billing data. To learn more about the "Cross Account IAM Role" that Antimetal uses, see [this page](/security/iam_roles_explained).
 
 ### Step 1: Connect via CloudFormation
 
