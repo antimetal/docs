@@ -6,6 +6,13 @@ const sidebars: SidebarsConfig = {
       type: "category",
       collapsible: false,
       collapsed: false,
+      label: "Onboarding",
+      items: ["onboarding/overview"],
+    },
+    {
+      type: "category",
+      collapsible: false,
+      collapsed: false,
       label: "Getting Started",
       items: [
         "index",
