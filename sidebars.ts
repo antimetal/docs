@@ -35,18 +35,6 @@ const sidebars: SidebarsConfig = {
           type: "category",
           collapsible: true,
           collapsed: true,
-          label: "Settings",
-          items: [
-            "product/settings/workspace",
-            "product/settings/accounts",
-            "product/settings/members",
-            "product/settings/billing",
-          ],
-        },
-        {
-          type: "category",
-          collapsible: true,
-          collapsed: true,
           label: "Savings",
           items: [
             "product/savings/volume_discounts", 
@@ -62,17 +50,30 @@ const sidebars: SidebarsConfig = {
           items: [
             "product/guardrails/anomalies", 
             "product/guardrails/rightsizing"
-          ]}
-          ,
-          {
-            type: "category",
-            collapsible: true,
-            collapsed: true,
-            label: "Visibility",
-            items: [
-              "product/visibility/dashboard",
-              "product/visibility/budgets", 
-            ]}
+          ]
+        },
+        {
+          type: "category",
+          collapsible: true,
+          collapsed: true,
+          label: "Visibility",
+          items: [
+            "product/visibility/dashboard",
+            "product/visibility/budgets", 
+          ]
+        },
+        {
+          type: "category",
+          collapsible: true,
+          collapsed: true,
+          label: "Settings",
+          items: [
+            "product/settings/workspace",
+            "product/settings/accounts",
+            "product/settings/members",
+            "product/settings/billing",
+          ],
+        },
       ],
     },
     {
@@ -89,18 +90,17 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       collapsible: false,
-      collapsed: false,
-      label: "FAQ",
-      items: [
-        "faq/index",
-        "faq/savings",
-      ],
+      label: "Billing",
+      items: ["billing/invoicing"]
     },
     {
       type: "category",
       collapsible: false,
-      label: "Billing",
-      items: ["billing/invoicing"]
+      collapsed: false,
+      label: "FAQ",
+      items: [
+        "faq/index",
+      ],
     },
   ],
   // By default, Docusaurus generates a sidebar from the docs folder structure
