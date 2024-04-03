@@ -7,7 +7,8 @@ sidebar_label: Invoicing
 
 # Invoicing
 
-By joining Antimetal, we take on the responsibility of managing your AWS billing. We consolidate your AWS usage and provide you with a single invoice. This invoice is generated on the 6th of every month, processed on the 8th, and is due on the 23rd of the same month, following Net15 terms.
+By joining Antimetal, we take on the responsibility of managing your AWS billing. We consolidate your AWS usage and provide you with a single invoice. This invoice is generated on <strong>the 6th</strong>
+ of every month, processed on the <strong>8th</strong>, and is due on the <strong>23rd</strong> of the same month, following Net15 terms.
 
 The most important invoicing dates are:
 

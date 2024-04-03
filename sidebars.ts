@@ -6,13 +6,6 @@ const sidebars: SidebarsConfig = {
       type: "category",
       collapsible: false,
       collapsed: false,
-      label: "Onboarding",
-      items: ["onboarding/overview"],
-    },
-    {
-      type: "category",
-      collapsible: false,
-      collapsed: false,
       label: "Getting Started",
       items: [
         "index",
@@ -28,14 +21,14 @@ const sidebars: SidebarsConfig = {
             "onboarding/payment",
             "onboarding/company_info",
             "onboarding/join_org",
+            "onboarding/csv",
           ],
         },
       ],
     },
     {
       type: "category",
-      collapsible: true,
-      collapsed: true,
+      collapsible: false,
       label: "Product",
       items: [
         {
@@ -44,31 +37,54 @@ const sidebars: SidebarsConfig = {
           collapsed: true,
           label: "Settings",
           items: [
-            "features/settings/workspace",
-            "features/settings/accounts",
-            "features/settings/members",
-            "features/settings/billing",
+            "product/settings/workspace",
+            "product/settings/accounts",
+            "product/settings/members",
+            "product/settings/billing",
           ],
         },
-      ],
-    },
-    {
-      type: "category",
-      collapsible: true,
-      collapsed: true,
-      label: "Security and Access Control",
-      items: [
-        "security/iam_roles_explained",
-        "security/aws_permissions",
-        "security/organization_changes",
+        {
+          type: "category",
+          collapsible: true,
+          collapsed: true,
+          label: "Savings",
+          items: [
+            "product/savings/volume_discounts", 
+            "product/savings/savings_plans", 
+            "product/savings/reserved_instances",
+            "product/savings/tax",
+          ]},
+        {
+          type: "category",
+          collapsible: true,
+          collapsed: true,
+          label: "Guardrails",
+          items: [
+            "product/guardrails/anomalies", 
+            "product/guardrails/rightsizing"
+          ]}
+          ,
+          {
+            type: "category",
+            collapsible: true,
+            collapsed: true,
+            label: "Visibility",
+            items: [
+              "product/visibility/dashboard",
+              "product/visibility/budgets", 
+            ]}
       ],
     },
     {
       type: "category",
       collapsible: false,
-      collapsed: false,
-      label: "Billing",
-      items: ["billing/invoicing"],
+      label: "Security and Access Control",
+      items: [
+        "security/iam_roles_explained",
+        "security/aws_permissions",
+        "security/organization_changes",
+        "security/iam_roles",
+      ],
     },
     {
       type: "category",
@@ -76,6 +92,12 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       label: "FAQ",
       items: ["faq/index"],
+    },
+    {
+      type: "category",
+      collapsible: false,
+      label: "Billing",
+      items: ["billing/invoicing"]
     },
   ],
   // By default, Docusaurus generates a sidebar from the docs folder structure
