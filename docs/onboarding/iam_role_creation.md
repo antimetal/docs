@@ -1,5 +1,5 @@
 ---
-title: Onboarding - IAM Role Creation
+title: IAM Role Creation
 description: Connect an AWS account to Antimetal by creating an IAM role.
 hide_table_of_contents: true
 sidebar_label: IAM Role Creation

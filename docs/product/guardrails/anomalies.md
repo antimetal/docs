@@ -2,7 +2,6 @@
 title: Antimetal Documentation
 description: Anomaly Detection
 hide_table_of_contents: true
-pagination_next: null
 sidebar_label: Anomaly Detection
 sidebar_position: 1
 ---

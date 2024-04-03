@@ -2,7 +2,6 @@
 title: Antimetal Documentation
 description: Budgets
 hide_table_of_contents: true
-pagination_next: null
 sidebar_label: Budgets
 sidebar_position: 2
 ---

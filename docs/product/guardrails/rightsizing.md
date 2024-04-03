@@ -2,7 +2,6 @@
 title: Antimetal Documentation
 description: Rightsizing Recommendation
 hide_table_of_contents: true
-pagination_next: null
 sidebar_label: Rightsizing Recommendation
 sidebar_position: 2
 ---

@@ -2,7 +2,6 @@
 title: Savings - FAQ
 description: Savings FAQ
 hide_table_of_contents: true
-pagination_next: null
 sidebar_label: Savings - FAQ
 ---
 
@@ -48,4 +47,4 @@ For more specific billing questions regarding Antimetal invoicing/billing please
 
 ## How often are SPs(Savings Plans) and RIs (Reserved Instances) information pulled into the Antimetal Platform?
 
-SP and RIs information are pulled daily into the platform. 
+SP and RIs information are pulled daily into the platform.
