@@ -1,32 +1,74 @@
 import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 
-/**
- * Creating a sidebar enables you to:
- - create an ordered group of docs
- - render a sidebar for each doc of that group
- - provide next/previous navigation
-
- The sidebars can be generated from the filesystem, or explicitly defined here.
-
- Create as many sidebars as you want.
- */
 const sidebars: SidebarsConfig = {
   sidebar: [
     {
       type: "category",
       collapsible: false,
       collapsed: false,
-      label: "Get Started",
+      label: "Getting Started",
       items: [
         "index",
         {
           type: "category",
-          collapsible: false,
-          collapsed: false,
+          collapsible: true,
+          collapsed: true,
           label: "Onboarding",
-          items: ["onboarding/overview"],
+          items: [
+            "onboarding/overview",
+            "onboarding/account_creation",
+            "onboarding/iam_role_creation",
+            "onboarding/payment",
+            "onboarding/company_info",
+            "onboarding/join_org",
+          ],
         },
       ],
+    },
+    {
+      type: "category",
+      collapsible: true,
+      collapsed: true,
+      label: "Product",
+      items: [
+        {
+          type: "category",
+          collapsible: true,
+          collapsed: true,
+          label: "Settings",
+          items: [
+            "features/settings/workspace",
+            "features/settings/accounts",
+            "features/settings/members",
+            "features/settings/billing",
+          ],
+        },
+      ],
+    },
+    {
+      type: "category",
+      collapsible: true,
+      collapsed: true,
+      label: "Security and Access Control",
+      items: [
+        "security/iam_roles_explained",
+        "security/aws_permissions",
+        "security/organization_changes",
+      ],
+    },
+    {
+      type: "category",
+      collapsible: false,
+      collapsed: false,
+      label: "Billing",
+      items: ["billing/invoicing"],
+    },
+    {
+      type: "category",
+      collapsible: false,
+      collapsed: false,
+      label: "FAQ",
+      items: ["faq/index"],
     },
   ],
   // By default, Docusaurus generates a sidebar from the docs folder structure
