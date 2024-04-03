@@ -91,7 +91,10 @@ const sidebars: SidebarsConfig = {
       collapsible: false,
       collapsed: false,
       label: "FAQ",
-      items: ["faq/index"],
+      items: [
+        "faq/index",
+        "faq/savings",
+      ],
     },
     {
       type: "category",
