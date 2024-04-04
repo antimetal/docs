@@ -1,5 +1,5 @@
 ---
-title: Onboarding - Account Creation
+title: Account Creation
 description: Create an account to get started with Antimetal.
 hide_table_of_contents: true
 sidebar_label: Account Creation

@@ -9,4 +9,3 @@ sidebar_position: 1
 # Volume Discount
 
 At Antimetal, our customers enjoy reduced egress pricing, particularly for high-volume services such as Amazon EC2, Amazon S3, and Amazon CloudFront.
-
