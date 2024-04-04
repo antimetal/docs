@@ -73,7 +73,7 @@ footer .copyright {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 400px;
+  width: 370px;
   flex-direction: column;
 }
 
