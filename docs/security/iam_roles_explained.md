@@ -38,3 +38,7 @@ As a further security measure, the role requires an `ExternalID` that is unique 
   ]
 }
 ```
+
+
+The following AWS documentation details a step by step walkthrough: 
+[<u>**AWS Documentation on Cross-Account IAM Roles.**</u>](https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html)

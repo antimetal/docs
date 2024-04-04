@@ -73,7 +73,7 @@ footer .copyright {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 400px;
+  width: 800px;
 }
 
 /* Style for the buttons */
@@ -88,14 +88,14 @@ footer .copyright {
   border-radius: 5px;
   transition: all 0.3s;
   margin-bottom: 20px;
-  width: 400px;
+  
   margin-left: 100px;
   cursor: pointer;
 }
 
 /* Style for the button images */
 .button img {
-  width: 100px;
+  width: 125px;
   height: auto;
   margin-bottom: 10px;
 }
@@ -103,7 +103,8 @@ footer .copyright {
 /* Hover effect for the buttons */
 .button:hover {
   background-color: #DBEF01;
-  padding-right: 75px;
+  padding-left: 50px;
+  color: black;
 }
 .button:last-child {
   margin-right: 0; /* Remove margin from the last button */

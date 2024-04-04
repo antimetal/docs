@@ -29,7 +29,6 @@ const sidebars: SidebarsConfig = {
       type: "category",
       collapsible: false,
       label: "Product",
-      className: "section-title product",
       items: [
         {
           type: "category",
@@ -78,12 +77,10 @@ const sidebars: SidebarsConfig = {
       type: "category",
       collapsible: false,
       label: "Security and Access Control",
-      className: "section-title security",
       items: [
         "security/iam_roles_explained",
         "security/aws_permissions",
         "security/organization_changes",
-        "security/iam_roles",
       ],
     },
     {
@@ -91,14 +88,12 @@ const sidebars: SidebarsConfig = {
       collapsible: false,
       label: "Billing",
       items: ["billing/invoicing"],
-      className: "section-title billing",
     },
     {
       type: "category",
       collapsible: false,
       label: "FAQ",
       items: ["faq/index"],
-      className: "section-title faq",
     },
   ],
   // By default, Docusaurus generates a sidebar from the docs folder structure

@@ -13,4 +13,8 @@ On the account settings page, you can see all the AWS accounts connected to Anti
 
 If you connect an account after onboarding, you should email support@antimetal.com to ensure that the account is properly set up and added to the organization.
 
-![Accounts](/img/screenshots/accounts.png "Accounts")
+
+<div align="center">
+    <br></br>
+    ![Accounts](/img/screenshots/accounts.png "Accounts")
+</div>

@@ -23,7 +23,7 @@ In the new tab, a CloudFormation Stack template should be displayed. This stack 
 
 You do not need to fill out any fields. Just click the checkbox at the bottom which says “I acknowledge that AWS CloudFormation might create IAM resources with custom names.” Then click "Create Stack".
 
-![image](/img/screenshots/create_cfn_stack.gif)
+![create_cfn_stack](/img/screenshots/create_cfn_stack.gif "create_cfn_stack")
 
 ### Step 3: Wait for Stack Creation
 
