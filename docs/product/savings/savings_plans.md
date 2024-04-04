@@ -2,7 +2,6 @@
 title: Antimetal Documentation
 description: Savings Plans
 hide_table_of_contents: true
-pagination_next: null
 sidebar_label: Savings Plans
 sidebar_position: 2
 ---

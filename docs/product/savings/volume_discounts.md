@@ -2,7 +2,6 @@
 title: Antimetal Documentation
 description: Volume Discount.
 hide_table_of_contents: true
-pagination_next: null
 sidebar_label: Volume Discount
 sidebar_position: 1
 ---

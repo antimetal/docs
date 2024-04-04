@@ -1,11 +1,11 @@
 ---
-title: Cross-Account IAM Roles, Explained
+title: Cross-Account IAM Roles
 description: Understand the security measures Antimetal takes to connect to your AWS account.
 hide_table_of_contents: true
-sidebar_label: Cross-Account IAM Roles, Explained
+sidebar_label: Cross-Account IAM Roles
 ---
 
-# Cross-Account IAM Roles, Explained
+# Cross-Account IAM Roles
 
 To connect your AWS account, Antimetal uses a Cross-Account IAM Role. This is AWS’ preferred method for cross-account interactions, providing a secure and reliable connection.
 

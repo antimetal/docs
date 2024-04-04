@@ -2,7 +2,6 @@
 title: Antimetal Documentation
 description: Reserved Instance Recommendations
 hide_table_of_contents: true
-pagination_next: null
 sidebar_label: Reserved Instance Recommendations
 sidebar_position: 3
 ---

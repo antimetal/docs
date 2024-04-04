@@ -2,7 +2,6 @@
 title: Antimetal Documentation
 description: Dashboard
 hide_table_of_contents: true
-pagination_next: null
 sidebar_label: Dashboard
 sidebar_position: 1
 ---

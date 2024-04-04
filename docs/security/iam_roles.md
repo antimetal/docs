@@ -2,7 +2,6 @@
 title: Antimetal Documentation
 description: Cross-Account IAM Roles
 hide_table_of_contents: true
-pagination_next: null
 sidebar_label: Cross-Account IAM Roles
 sidebar_position: 1
 ---
