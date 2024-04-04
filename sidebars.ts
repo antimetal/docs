@@ -97,12 +97,13 @@ const sidebars: SidebarsConfig = {
       className: "section-title billing",
     },
     {
-      "type": "category",
-      "collapsed": false,
-      "label": "FAQ",
-      "items": ["faq/index"],
-      "className": "section-title faq"
+      type: "category",
+      collapsible: false,
+      label: "FAQ",
+      items: ["faq/index"],
+      className: "section-title faq",
     }
+
     
   ],
   // By default, Docusaurus generates a sidebar from the docs folder structure

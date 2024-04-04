@@ -12,3 +12,5 @@ The account settings page is the centralized place to manage your AWS accounts c
 On the account settings page, you can see all the AWS accounts connected to Antimetal. You can also add new accounts, remove existing accounts, and update the account name.
 
 If you connect an account after onboarding, you should email support@antimetal.com to ensure that the account is properly set up and added to the organization.
+
+![Accounts](/img/screenshots/accounts.png "Accounts")

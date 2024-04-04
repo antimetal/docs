@@ -9,4 +9,4 @@ sidebar_position: 2
 # Budgets
 
 Our budgeting tool assists in tracking cloud spend across all your accounts, ensuring they align with your quarterly and annual financial plans.
-![Budgets](/img/budgets.png "Budgets")
+![Budgets](/img/screenshots/budget.png "Budgets")

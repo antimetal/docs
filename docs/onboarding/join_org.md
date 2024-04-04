@@ -24,7 +24,9 @@ To delete your organization, you have to first remove all sub-accounts. A sub-ac
 - Login to each sub-account.
 - Go the AWS Organizations console.
 
-At times, you may encounter a message indicating that you cannot exit the organization. This usually occurs when your account is reliant on the management account and lacks the necessary details to operate as an independent AWS account. This situation typically arises due to one of the following reasons:
+At times, you may encounter a message indicating that you cannot exit the organization. This usually occurs when your account is reliant on the management account and lacks the necessary details to operate as an independent AWS account.
+
+![image](/img/screenshots/leave_organization.png "image")
 
 #### 1. Your sub-account does not have a billing method attached.
 
@@ -54,6 +56,8 @@ Once all sub-account have been removed, you will just have the management accoun
 - Login to the management account.
 - Go to the AWS Organizations console.
 - Click on the "Delete organization" button.
+
+![image](/img/screenshots/delete_org.png "image")
 
 ### Step 3: Accept Antimetal Organization Invites
 

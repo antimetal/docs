@@ -15,4 +15,4 @@ In order to import your past cost data, go to Cost Explorer and export costs for
 4. Filter by each account and download a CSV file
 5. Rename the csv file to your AWS Account ID and send it to us or upload through the site!
 
-![CSV Download](/img/csv-download.png)
+![CSV Download](/img/screenshots/csv-download.png)

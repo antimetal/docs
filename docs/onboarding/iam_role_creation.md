@@ -15,7 +15,7 @@ You will be prompted to "Connect account via CloudFormation". When you click thi
 
 :::info
 If you have multiple accounts in an [AWS Organization](https://aws.amazon.com/organizations/), you will need to connect each account individually. In this case, you should **connect your management account to Antimetal first**.
-:::
+:::              
 
 ### Step 2: Create CloudFormation Stack
 
@@ -23,11 +23,14 @@ In the new tab, a CloudFormation Stack template should be displayed. This stack 
 
 You do not need to fill out any fields. Just click the checkbox at the bottom which says “I acknowledge that AWS CloudFormation might create IAM resources with custom names.” Then click "Create Stack".
 
+![image](/img/screenshots/create_cfn_stack.gif "image")
+
 ### Step 3: Wait for Stack Creation
 
 The stack should finish with `CREATE_COMPLETE` in 30-60 seconds. You can click the refresh button to check the status.
 
 ### Step 4: Check Stack Status
+![image](/img/screenshots/cfn_stack_create_complete.png "image")
 
 ### Step 6: Return to Antimetal Onboarding
 
