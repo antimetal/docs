@@ -20,3 +20,9 @@ Please note, Antimetal imposes a 2.9% payment processing fee for non-ACH payment
 <p align="center">
     <img src="/img/screenshots/payment_connection.png" alt="Payment Connection" />
 </p>
+
+
+<div align="center">
+    <br></br>
+    ![Payment Connection](/img/screenshots/payment_connection.png "Payment Connection")
+</div>

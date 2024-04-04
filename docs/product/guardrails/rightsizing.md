@@ -11,3 +11,5 @@ sidebar_position: 2
 Efficient scaling in the cloud is contingent upon optimizing your infrastructure. Antimetal's Rightsizing Recommendations combine AWS insights with our proprietary models to identify and act on optimization opportunities, helping to control costs and support sustainable growth.
 
 ![rightsizing recommendations](/img/screenshots/rightsizing.png "rightsizing recommendations")
+
+![rightsizing recommendations](/img/screenshots/rightsizing.png "rightsizing recommendations")
