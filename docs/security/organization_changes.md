@@ -31,4 +31,4 @@ When you join our organization, we’ll replicate your OU to mirror the structur
 
 ## 6. Leaving the Org
 
-There are no fees or penalties to leaving the Antimetal organization, we just ask for a 60 day grace period in order to make sure you do not affect the savings of any other members within the group. If Antimetal ever were to go out of business you would be automatically removed from the organization - your accounts would be unaffected as AWS would go after us for any missed payments.
+There are no fees or penalties to leaving the Antimetal organization, we just ask for a 60 day grace period in order to make sure you do not affect the savings of any other members within the group. In the event of insolvency, you would be automatically removed from the organization - your accounts would be unaffected.

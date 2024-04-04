@@ -14,7 +14,7 @@ If you have a single account that is not in an organization, you can skip direct
 If you already have your own AWS organization, you will have to destructure it to join Antimetal's organization.
 
 :::info
-Learn more about the implications of destructuring your organization [here](/faq).
+Learn more about the implications of destructuring your organization [here](/security/organization_changes).
 :::
 
 ### Step 1: Remove Sub-Accounts
@@ -23,6 +23,7 @@ To delete your organization, you have to first remove all sub-accounts. A sub-ac
 
 - Login to each sub-account.
 - Go the AWS Organizations console.
+- Click on "Leave Organization"
 
 At times, you may encounter a message indicating that you cannot exit the organization. This usually occurs when your account is reliant on the management account and lacks the necessary details to operate as an independent AWS account.
 
@@ -69,3 +70,7 @@ To accept an invite:
 - Go to the AWS Organizations console.
 - Click on the "Invitations" tab.
 - Accept the invite from Antimetal. It should be from groups@antimetal.com.
+
+:::info
+You cannot accept an organization invite if you are already part of an organization.
+:::
