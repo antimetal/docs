@@ -23,24 +23,30 @@ In the new tab, a CloudFormation Stack template should be displayed. This stack 
 
 You do not need to fill out any fields. Just click the checkbox at the bottom which says “I acknowledge that AWS CloudFormation might create IAM resources with custom names.” Then click "Create Stack".
 
+![create_cfn_stack](/img/screenshots/create_cfn_stack.gif "create_cfn_stack")
+
 ### Step 3: Wait for Stack Creation
 
 The stack should finish with `CREATE_COMPLETE` in 30-60 seconds. You can click the refresh button to check the status.
 
-### Step 4: Check Stack Status
+You should see 3 resources created:
 
-### Step 6: Return to Antimetal Onboarding
+- `AntimetalGroupsRole`
+- `AntimetalGroupsPolicy`
+- `AntimetalHandshake`
+
+<p align="center">
+  <img src="/img/screenshots/cfn_stack_create_complete.png" alt="Stack Create Complete" />
+</p>
+
+### Step 4: Return to Antimetal Onboarding
 
 Return to the Antimetal onboarding page. You should now see that your account has been connected.
 
-### Step 7: Repeat for All AWS Accounts
+### Step 5: Repeat for All AWS Accounts
 
 If you have more AWS accounts, repeat the above steps for each one.
 
-<!-- To connect your AWS account, Antimetal uses a “Cross Account IAM Role”. This is AWS’ preferred method for cross-account interactions, providing a secure and reliable connection.
-
-Cross-account IAM roles allow customers to securely grant access to AWS resources in their account to a third party, like Antimetal while retaining the ability to control and audit who is accessing your AWS account. Cross-account roles reduce the amount of sensitive information APN Partners need to store for their customers so that they can focus on their product instead of managing keys.
-
-The creation of an IAM role means that Antimetal will never require sensitive access credentials, account logins, passwords, or other information.
-
- -->
+:::info
+You may have to open other browser windows to log into each AWS account separately.
+:::

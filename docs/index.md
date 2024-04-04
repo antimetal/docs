@@ -6,6 +6,25 @@ sidebar_label: Welcome
 sidebar_position: 1
 ---
 
-# Overview
+# Overview Page
 
-Welcome to Antimetal!
+
+<div class="image-container">
+  <a href="/product/savings/volume_discounts" class="button">
+    <img src="/img/sidebar-icons/product.png" alt="Product" />
+    <p>Product</p>
+  </a>
+  <a href="/security/iam_roles_explained" class="button">
+    <img src="/img/sidebar-icons/security.png" alt="Security" />
+    <p>Security</p>
+  </a>
+  <a href="/billing/" class="button">
+    <img src="/img/sidebar-icons/billing.png" alt="Billing" />
+    <p>Billing</p>
+  </a>
+  <a href="/faq/" class="button">
+    <img src="/img/sidebar-icons/faq.png" alt="FAQ" />
+    <p>FAQ</p>
+  </a>
+
+</div>

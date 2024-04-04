@@ -17,3 +17,10 @@ The owner also has the ability to adjust the roles of other users. In Antimetal,
 - Viewer: This role has read-only access. Viewers can view all the data in the workspace but are not permitted to make any changes.
 
 To invite a user, simply input their email into the invite box and click "Invite." The invitee will receive an email containing a link to join the workspace. If they do not already have an account, they will be prompted to create one.
+
+
+
+<div align="center">
+    <br></br>
+    ![members](/img/screenshots/members.png "members")
+</div>

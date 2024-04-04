@@ -9,12 +9,12 @@ sidebar_label: Join Our Organization
 
 The final step in the onboarding process is to join Antimetal's organization.
 
-If you have a single account that is not in an organization, you can skip directly to Step 3.
+If you have a single account that is not in an organization, you can skip directly to [Step 3](#step-3-accept-antimetal-organization-invites).
 
 If you already have your own AWS organization, you will have to destructure it to join Antimetal's organization.
 
 :::info
-Learn more about the implications of destructuring your organization [here](/faq).
+Learn more about the implications of destructuring your organization [here](/security/organization_changes).
 :::
 
 ### Step 1: Remove Sub-Accounts
@@ -23,8 +23,11 @@ To delete your organization, you have to first remove all sub-accounts. A sub-ac
 
 - Login to each sub-account.
 - Go the AWS Organizations console.
+- Click on "Leave Organization"
 
-At times, you may encounter a message indicating that you cannot exit the organization. This usually occurs when your account is reliant on the management account and lacks the necessary details to operate as an independent AWS account. This situation typically arises due to one of the following reasons:
+At times, you may encounter a message indicating that you cannot exit the organization. This usually occurs when your account is reliant on the management account and lacks the necessary details to operate as an independent AWS account.
+
+![Leave Organization](/img/screenshots/leave_organization.png "Leave Organization")
 
 #### 1. Your sub-account does not have a billing method attached.
 
@@ -55,6 +58,8 @@ Once all sub-account have been removed, you will just have the management accoun
 - Go to the AWS Organizations console.
 - Click on the "Delete organization" button.
 
+![delete org](/img/screenshots/delete_org.png "delete org")
+
 ### Step 3: Accept Antimetal Organization Invites
 
 Shortly after you complete Steps 1 and 2, each of your accounts will receive an invite to the Antimetal organization. You will have to accept these invites to join our organization.
@@ -65,3 +70,7 @@ To accept an invite:
 - Go to the AWS Organizations console.
 - Click on the "Invitations" tab.
 - Accept the invite from Antimetal. It should be from groups@antimetal.com.
+
+:::info
+You cannot accept an organization invite if you are already part of an organization.
+:::

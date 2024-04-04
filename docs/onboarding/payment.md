@@ -16,3 +16,7 @@ Antimetal provides the flexibility to connect either a credit card or a bank acc
 :::warning
 Please note, Antimetal imposes a 2.9% payment processing fee for non-ACH payments. ACH payments, however, are exempt from this fee. We strongly advise connecting a bank account to avoid these additional charges
 :::
+
+<p align="center">
+    <img src="/img/screenshots/payment_connection.png" alt="Payment Connection" />
+</p>
