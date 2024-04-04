@@ -9,8 +9,8 @@ sidebar_position: 1
 # Overview Page
 
 
-<div class="image-container">
-  <a href="/product/savings/volume_discounts" class="button">
+<div class="button-container">
+  <a href="/product/savings/volume_discounts" class="button img">
     <img src="/img/sidebar-icons/product.png" alt="Product" />
     <p>Product</p>
   </a>
@@ -18,7 +18,7 @@ sidebar_position: 1
     <img src="/img/sidebar-icons/security.png" alt="Security" />
     <p>Security</p>
   </a>
-  <a href="/billing/invoicing" class="button">
+  <a href="/billing/" class="button">
     <img src="/img/sidebar-icons/billing.png" alt="Billing" />
     <p>Billing</p>
   </a>
