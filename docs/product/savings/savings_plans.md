@@ -16,5 +16,6 @@ The chart below provided below by this [AWS Blog Post](https://aws.amazon.com/bl
 
 _By Q3, when Compute spend starts declining, this strategy allows the overall commitment level to scale down by simply not renewing the expiring Savings Plan (medium Blue named SP2) and opting for a smaller Savings Plan (dark green SP 8)._
 
+:::info
 Antimetal has automated this process for all customers, enabling our customers to focus on core business while benefiting from sustainable savings. Opt-out options are available for those who prefer manual management.
-
+:::

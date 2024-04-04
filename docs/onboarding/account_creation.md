@@ -7,7 +7,7 @@ sidebar_label: Account Creation
 
 # Account Creation
 
-To get started, create an account at [app.antimetal.com](https://app.antimetal.com).
+To get started, create an account at [<u>**app.antimetal.com**</u>](https://app.antimetal.com).
 
 You can sign up using Google or by entering your email address. If you sign up with email, you will be sent a magic link to login.
 
