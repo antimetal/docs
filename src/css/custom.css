@@ -73,31 +73,37 @@ footer .copyright {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 800px;
+  width: 600px;
+  flex-direction: column;
 }
 
 /* Style for the buttons */
 .button {
-  display: inline-block;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  display: flex;
+
   color: black;
   padding: 20px;
   border: 2px solid #333;
   border-radius: 5px;
   transition: all 0.3s;
   margin-bottom: 20px;
-  
-  margin-left: 100px;
+  margin-left: 200px;
   cursor: pointer;
 }
 
 /* Style for the button images */
 .button img {
-  width: 125px;
+  width: 100px;
   height: auto;
   margin-bottom: 10px;
+  margin-right: 40px;
+}
+
+.button p {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: auto; /* Reset margin */
+  margin-top: auto; /* Align to the bottom */
 }
 
 /* Hover effect for the buttons */
@@ -108,12 +114,4 @@ footer .copyright {
 }
 .button:last-child {
   margin-right: 0; /* Remove margin from the last button */
-}
-
-.image-container {
-  display: flex;
-}
-
-.image-container p {
-  margin-top: 8px;
 }
