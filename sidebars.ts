@@ -18,9 +18,10 @@ const sidebars: SidebarsConfig = {
             "onboarding/overview",
             "onboarding/account_creation",
             "onboarding/iam_role_creation",
+            "onboarding/csv",
             "onboarding/payment",
             "onboarding/join_org",
-            "onboarding/csv",
+            
           ],
         },
       ],
