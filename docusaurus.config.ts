@@ -71,45 +71,22 @@ const config: Config = {
     },
     footer: {
       style: "light",
-      // links: [
-      //   {
-      //     title: "Docs",
-      //     items: [
-      //       {
-      //         label: "Tutorial",
-      //         to: "/docs/intro",
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     title: "Community",
-      //     items: [
-      //       {
-      //         label: "Twitter",
-      //         href: "https://twitter.com/docusaurus",
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     title: "More",
-      //     items: [
-      //       {
-      //         label: "Blog",
-      //         to: "/blog",
-      //       },
-      //       {
-      //         label: "GitHub",
-      //         href: "https://github.com/facebook/docusaurus",
-      //       },
-      //     ],
-      //   },
-      // ],
-      // logo: { alt: "Antimetal", src: "/img/vantage-footer-logo.svg" },
       copyright: `© ${new Date().getFullYear()} Antimetal Inc.`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+    },
+    algolia: {
+      // The application ID provided by Algolia
+      appId: "KBUWZBJ6QU",
+
+      // Public API key: it is safe to commit it
+      apiKey: "f6a9f2beb61290b814aaad436c9ff4ef",
+
+      indexName: "antimetal",
+
+      contextualSearch: false,
     },
   } satisfies Preset.ThemeConfig,
 };
