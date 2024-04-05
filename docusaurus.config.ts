@@ -82,11 +82,11 @@ const config: Config = {
       appId: "KBUWZBJ6QU",
 
       // Public API key: it is safe to commit it
-      apiKey: "2022b944bdf184b11beb43f617a2711b",
+      apiKey: "f6a9f2beb61290b814aaad436c9ff4ef",
 
       indexName: "antimetal",
 
-      contextualSearch: true,
+      contextualSearch: false,
     },
   } satisfies Preset.ThemeConfig,
 };
