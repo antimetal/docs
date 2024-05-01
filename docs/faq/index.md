@@ -29,7 +29,7 @@ Before your Antimetal onboarding call, we highly recommend:
 
 **How do I download my historical cost explorer data from AWS?**  
 
-For a step-by-step guide on how to download this information from AWS Cost Explorer, please follow the guide here.  
+For a step-by-step guide on how to download this information from AWS Cost Explorer, please follow the guide [here](/onboarding/csv.md).  
 
 <br></br>
 

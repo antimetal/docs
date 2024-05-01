@@ -11,11 +11,11 @@ As you consider joining our AWS Organization, it's essential to understand the v
 
 ## 1. Organizational Policies
 
-Although you are within the Antimetal organization, our permissions to your account are limited to the billing level. The only resource we create is a cross-account IAM role to see your billing and usage. As you can see, we do not create an **OrganizationAccountAccessRole** in your account when you join and our organization does not have **All Features** enabled, preventing us from getting admin access to any parts of your account. Any administrative changes would need to be explicitly accepted by you via a **handshake**. Read the AWS documentation here.
+Although you are within the Antimetal organization, our permissions to your account are limited to the billing level. The only resource we create is a cross-account IAM role to see your billing and usage. As you can see, we do not create an **OrganizationAccountAccessRole** in your account when you join and our organization does not have **All Features** enabled, preventing us from getting admin access to any parts of your account. Any administrative changes would need to be explicitly accepted by you via a **handshake**. Read the [<u>**AWS documentation here**</u>](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html#:~:text=However%2C%20unlike%20created%20accounts%2C%20the%20OrganizationAccountAccessRole%20IAM%20role%20is%20not%20automatically%20created%20in%20the%20member%20account%20with%20permissions%20for%20the%20management%20account%20to%20assume.).
 
 ## 2. Permissions
 
-The file where you can find a full list of the IAM role permissions linked here—none have admin access.
+The file where you can find a full list of the IAM role permissions linked [here](security/iam_roles_explained.md)—none have admin access.
 
 ## 3. Access Control
 
