@@ -21,7 +21,6 @@ const sidebars: SidebarsConfig = {
             "onboarding/csv",
             "onboarding/payment",
             "onboarding/join_org",
-            
           ],
         },
       ],
@@ -41,6 +40,8 @@ const sidebars: SidebarsConfig = {
             "product/savings/savings_plans",
             "product/savings/reserved_instances",
             "product/savings/tax",
+            "product/savings/schedule",
+            "product/savings/autopilot",
           ],
         },
         {
@@ -94,7 +95,7 @@ const sidebars: SidebarsConfig = {
       type: "category",
       collapsible: false,
       label: "FAQ",
-      items: ["faq/index"],
+      items: ["faq/onboarding", "faq/savings", "faq/billing", "faq/aws"],
     },
   ],
   // By default, Docusaurus generates a sidebar from the docs folder structure
