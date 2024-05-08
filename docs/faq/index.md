@@ -2,7 +2,7 @@
 title: Frequently Asked Questions
 description: FAQ
 hide_table_of_contents: true
-sidebar_label: Onboarding
+sidebar_label: FAQ
 ---
 
 # FAQ
