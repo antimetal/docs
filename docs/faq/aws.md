@@ -7,13 +7,6 @@ sidebar_label: AWS
 
 # AWS
 
-
-**Why am I getting permission denied when trying to enable the resource cost group in the cost explorer?**  
-
-Enable the following setting from AWS in the company account requested. Please note that this change will be enabled within 48 hours  
-
-<br></br>
-
 **How do I create new cost allocation tags?**  
 
 All tags that you apply to any resource become cost-allocation tags as soon as they are approved. After you create any new tags, Antimetal will approve these tags as cost allocation tags so you can view them in the cost explorer/CUR/etc.  

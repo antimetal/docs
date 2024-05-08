@@ -9,7 +9,7 @@ sidebar_label: Join Our Organization
 
 The final step in the onboarding process is to join Antimetal's organization.
 
-If you have a single account that is not in an organization, you can skip directly to [Step 3](#step-3-accept-antimetal-organization-invites).
+If you have a single account that is not in an organization, you can skip directly to [<u>Step 3</u>](#step-3-accept-antimetal-organization-invites).
 
 If you already have your own AWS organization, you will have to destructure it to join Antimetal's organization.
 
