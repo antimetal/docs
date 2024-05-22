@@ -119,6 +119,19 @@ For more specific questions regarding differences between your companies’ invo
 
 <br></br>
 
+<details>
+<summary>
+
+**Why do the Antimetal invoice dates not match what I see in my Stripe billing portal?**
+
+</summary>
+We send out the detailed invoice on the 6th of the month. On the 8th of the month, we send a Stripe invoice (which automatically charges the payment method on file) which will have an associated receipt.
+
+</details>
+
+<br></br>
+
+
 ### AWS
 
 <details>
