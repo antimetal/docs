@@ -131,6 +131,20 @@ We send out the detailed invoice on the 6th of the month. On the 8th of the mont
 
 <br></br>
 
+<details>
+<summary>
+
+**Why did I get two bills after joining Antimetal?**
+
+</summary>
+The first month is the only month you will be seeing two bills, one from AWS and one from Antimetal since you joined in the middle of the month. Moving forward, you will only see one bill on your account.
+</details>
+
+<br></br>
+
+
+
+
 
 ### AWS
 
