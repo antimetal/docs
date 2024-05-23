@@ -125,7 +125,7 @@ For more specific questions regarding differences between your companies’ invo
 **Why do the Antimetal invoice dates not match what I see in my Stripe billing portal?**
 
 </summary>
-We send out the detailed invoice on the 6th of the month. On the 8th of the month, we send a Stripe invoice (which automatically charges the payment method on file) which will have an associated receipt.
+We send out the detailed invoice on the 6th of the month. On the 8th of the month, we send a Stripe invoice (which automatically charges the payment method on file) which will have an associated receipt.  Stripe shows the 6th-8th since that's when we send out invoices, but invoices will always be for a single month of services.
 
 </details>
 
@@ -142,9 +142,27 @@ The first month is the only month you will be seeing two bills, one from AWS and
 
 <br></br>
 
+</details>
+<summary>
 
+**Why does Stripe show a higher charge than what was listed on my Antimetal Invoice?**
 
+</summary>
+If you are paying with credit card, there is a 2.9% fee that is added to the total of your invoice and hence the reason why you may be seeing this difference. This fee can be avoided by changing the payment method to an approved bank or direct wire transfer.  Please feel welcome to reach out to support@antimetal.com if you have further questions. 
+</details>
 
+<br></br>
+
+</details>
+<summary>
+
+**How do I update my billing information?**
+
+</summary>
+You can update your billing information in Stripe directly from the Antimetal dashboard by selecting the "Billing" tab on the left side navigation panel and clicking the "Open Stripe Billing Portal" icon. If you encounter any issues with updating your information, please reach out to support@antimetal.com. 
+</details>
+
+<br></br>
 
 ### AWS
 
