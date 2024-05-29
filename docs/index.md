@@ -18,7 +18,7 @@ sidebar_position: 1
     <img src="/img/sidebar-icons/security.png" alt="Security" />
     <p>Security</p>
   </a>
-  <a href="/billing/invoicing" class="button">
+  <a href="/billing/billing_cycle" class="button">
     <img src="/img/sidebar-icons/billing.png" alt="Billing" />
     <p>Billing</p>
   </a>

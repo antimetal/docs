@@ -89,7 +89,11 @@ const sidebars: SidebarsConfig = {
       type: "category",
       collapsible: false,
       label: "Billing",
-      items: ["billing/invoicing"],
+      items: [
+        "billing/billing_cycle",
+        "billing/commitment_adjustment_fees",
+        "billing/cost_and_usage_report",
+      ],
     },
     "faq/index",
   ],
