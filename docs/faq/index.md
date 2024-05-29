@@ -109,7 +109,7 @@ SP and RIs information are pulled daily into the platform.
 
 Antimetal passes all savings back to our customers and is **free for most customers**. 
 
-If your monthly bill is over $50k, we charge a scale subscription fee of $599 to cover the additional expenses we incur for storing and processing large volumes of granular cost data.  
+The only time we charge a fee is if your monthly bill is over $50k, per [<u>**our website pricing page**</u>](https://antimetal.com/#pricing)
 </details>
 <br></br>
 
