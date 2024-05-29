@@ -1,11 +1,11 @@
 ---
-title: Invoicing
-description: Invoicing overview and schedule.
+title: Billing Cycle
+description: Billing invoicing overview and schedule.
 hide_table_of_contents: true
-sidebar_label: Invoicing
+sidebar_label: Billing Cycle
 ---
 
-# Invoicing
+# Billing Cycle
 
 By joining Antimetal, we take on the responsibility of managing your AWS billing. We consolidate your AWS usage and provide you with a single invoice. This invoice is generated on <strong>the 6th</strong>
  of every month, processed on the <strong>8th</strong>, and is due on the <strong>23rd</strong> of the same month, following Net15 terms.
