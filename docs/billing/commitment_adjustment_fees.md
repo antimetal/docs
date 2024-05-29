@@ -17,7 +17,7 @@ AWS doesn't support this billing redistribution natively so Antimetal handles th
 
 Antimetal ingests the Cost And Usage Report and resdistributes the `effective-cost` of a commitment (the fees of the commitment) when it flows across the organization to another account.
 
-**To demistify this with an example:** if `owner account` has a commitment of **$100** in Compute Savings Plans and it flows cross-organization to negate **$130** from the compute workload of a `beneficiary account`, Antimetal will redistribute the `effective-cost` of the Savings Plans by reimbursing the `owner account` **$100** and passing this commitment fee to the `beneficiary account`. On net, the `beneficiary account` saved **$30** they otherwise wouldn't have and the `owner account` recoups **$100** they otherwise would've lost. 
+**To demistify this with an example:** if owner account has a commitment of **$100** in Compute Savings Plans and it flows cross-organization to negate **$130** from the compute workload of a beneficiary account, Antimetal will redistribute the `effective-cost` of the Savings Plans by reimbursing the owner account **$100** and passing this commitment fee to the beneficiary account. On net, the beneficiary account saved **$30** they otherwise wouldn't have and the owner account recoups **$100** they otherwise would've lost. 
 
 To emphasize, Antimetal **does not take a fee from savings**. This redistribution system is simply put in place for the advantage of our customers. 
 
