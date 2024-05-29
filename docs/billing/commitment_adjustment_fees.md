@@ -7,7 +7,7 @@ sidebar_label: Commitment Adjustment Fees
 
 # Commitment Adjustment Fees
 
-After joining Antimetal, costs from AWS Cost Explorer will largely reflect what the Antimetal bill will be at the end of each [<u>**billing cycle**</u>](/billing/billing_cycle). If the costs differ, they will be denoted in the Antimetal Invoice as <strong>Commitment Adjustment Fees</strong>.
+After joining Antimetal, your bill at the end of each [<u>**billing cycle**</u>](/billing/billing_cycle) will largely reflect your costs found from AWS Cost Explorer. If the costs differ, they will be denoted in your invoice as <strong>Commitment Adjustment Fees</strong>.
 
 ### What are Commitment Adjustment Fees
 Most AWS accounts under the Antimetal organization have commitments. These can be Savings Plans, Reserved Instances, CloudFront Security Bundles, etc. Commitments are applied first to the owner account but will flow to others accounts in the organization if they go underutilized - thereby generating savings for other accounts. This is great for both parties, the owner account that purchased the commitments don't have to pay for their underutilized commitments while other accounts (beneficiary accounts), get a discount from a commitment they didn't purchase. The official AWS explanation can be found at this [<u>**AWS documentation**</u>](https://docs.aws.amazon.com/savingsplans/latest/userguide/sp-applying.html). 
