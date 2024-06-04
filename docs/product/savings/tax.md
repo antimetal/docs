@@ -13,3 +13,7 @@ Delaware does not impose Service Tax or VAT on digital goods, which means custom
 
 We view this as a significant advantage for all members of Antimetal, irrespective of their original tax jurisdiction.
 The elimination of tax not only results in additional savings but also simplifies the process of reviewing and understanding your bill. Furthermore, it saves you valuable time by removing the need for tax reclamation or refund procedures.
+
+:::info
+If you retain your existing organization instead of joining Antimetal's, you will be subject to the tax laws of your original jurisdiction.
+:::
