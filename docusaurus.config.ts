@@ -52,8 +52,9 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/logo.svg",
     colorMode: {
-      defaultMode: "light",
-      disableSwitch: true,
+      defaultMode: "dark",
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
     },
     navbar: {
       title: "Antimetal",
