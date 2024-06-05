@@ -51,23 +51,6 @@ footer .copyright {
   margin-right: 4px; /* adjust this value to control the padding between the image and the link */
 }
 
-
-.section-title.billing > div >a::before {
-  background-image: url(/static/img/sidebar-icons/billing.png);
-}
-
-.section-title.product > div >a::before {
-  background-image: url(/static/img/sidebar-icons/product.png);
-}
-
-.section-title.faq > div >a::before {
-  background-image: url(/static/img/sidebar-icons/faq.png);
-}
-
-.section-title.security > div >a::before {
-  background-image: url(/static/img/sidebar-icons/security.png);
-}
-
 /* Style for the container */
 .button-container {
   display: flex;
@@ -75,7 +58,7 @@ footer .copyright {
   justify-content: space-between;
   align-items: stretch;
   width: 100%;
-  gap: 50px;
+  gap: 10px;
   margin-top: 20px;
   margin-bottom: 10px;
 }
@@ -87,6 +70,16 @@ footer .copyright {
 
 .DocSearch-Button-Keys{
   margin-left: 50px;
+}
+
+.start {
+  width: 100%;
+  border: 2px black solid;
+  font-size: x-large;
+  display: block;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
 }
 
 @media all and (max-width: 1024px) {
