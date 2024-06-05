@@ -38,8 +38,8 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/antimetal/docs",
+          // editUrl:
+          //   "https://github.com/antimetal/docs/blob/main/",
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -56,15 +56,22 @@ const config: Config = {
       disableSwitch: true,
     },
     navbar: {
-      title: "Antimetal Docs",
+      title: "Antimetal",
       logo: {
         alt: "Antimetal Logo",
         src: "img/logo.svg",
+        href: "https://antimetal.com"
       },
       items: [
         {
-          href: "https://github.com/antimetal",
-          label: "GitHub",
+          href: "/",
+          label: "Docs",
+          position: "left"
+        },
+
+        {
+          href: "https://app.antimetal.com",
+          label: "Sign Up",
           position: "right",
         },
       ],
