@@ -2,12 +2,10 @@
 title: Onboarding Overview
 description: Overview of the steps to get onboarded to Antimetal.
 hide_table_of_contents: true
-sidebar_label: Overview
+sidebar_label: Onboarding
 ---
 
-# Overview
-
-This document provides a high-level overview of the onboarding process.
+# Onboarding
 
 Here are the key steps you'll need to complete:
 

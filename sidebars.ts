@@ -14,8 +14,12 @@ const sidebars: SidebarsConfig = {
           collapsible: true,
           collapsed: true,
           label: "Onboarding",
+          link:            
+          { 
+            type: 'doc',
+            id: "onboarding/index",
+          },
           items: [
-            "onboarding/overview",
             "onboarding/account_creation",
             "onboarding/iam_role_creation",
             "onboarding/csv",
