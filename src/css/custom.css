@@ -19,7 +19,7 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
-  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary: #dbef01;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
@@ -51,68 +51,44 @@ footer .copyright {
   margin-right: 4px; /* adjust this value to control the padding between the image and the link */
 }
 
-
-.section-title.billing > div >a::before {
-  background-image: url(/static/img/sidebar-icons/billing.png);
-}
-
-.section-title.product > div >a::before {
-  background-image: url(/static/img/sidebar-icons/product.png);
-}
-
-.section-title.faq > div >a::before {
-  background-image: url(/static/img/sidebar-icons/faq.png);
-}
-
-.section-title.security > div >a::before {
-  background-image: url(/static/img/sidebar-icons/security.png);
-}
-
 /* Style for the container */
 .button-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
-  width: 370px;
-  flex-direction: column;
-}
-
-/* Style for the buttons */
-.button {
-  display: flex;
-
-  color: black;
-  padding: 20px;
-  border: 2px solid #333;
-  border-radius: 5px;
-  transition: all 0.3s;
-  margin-bottom: 20px;
-  margin-left: 50px;
-  width: 500px auto;
-  cursor: pointer;
-}
-
-/* Style for the button images */
-.button img {
-  width: 100px;
-  height: auto;
+  align-items: stretch;
+  width: 100%;
+  gap: 10px;
+  margin-top: 20px;
   margin-bottom: 10px;
-  margin-right: 40px;
 }
 
-.button p {
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: auto; /* Reset margin */
-  margin-top: auto; /* Align to the bottom */
+[data-theme="dark"] .navbar__logo {
+  filter: invert(100%)
 }
 
-/* Hover effect for the buttons */
-.button:hover {
-  background-color: #DBEF01;
-  padding-left: 50px;
-  color: black;
+[data-theme="dark"] .navbar__brand:hover .navbar__logo {  
+  filter: invert(91%) sepia(12%) saturate(7060%) hue-rotate(13deg) brightness(105%) contrast(99%);
 }
-.button:last-child {
-  margin-right: 0; /* Remove margin from the last button */
+
+.DocSearch-Button-Keys{
+  margin-left: 50px;
+}
+
+.start {
+  width: 100%;
+  border: 2px black solid;
+  font-size: x-large;
+  display: block;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+@media all and (max-width: 1024px) {
+  /* put your css styles in here */
+  
+  .button-container {
+    flex-direction: column !important;
+  }
 }

@@ -14,8 +14,12 @@ const sidebars: SidebarsConfig = {
           collapsible: true,
           collapsed: true,
           label: "Onboarding",
+          link:            
+          { 
+            type: 'doc',
+            id: "onboarding/index",
+          },
           items: [
-            "onboarding/overview",
             "onboarding/account_creation",
             "onboarding/iam_role_creation",
             "onboarding/csv",
@@ -89,7 +93,11 @@ const sidebars: SidebarsConfig = {
       type: "category",
       collapsible: false,
       label: "Billing",
-      items: ["billing/invoicing"],
+      items: [
+        "billing/billing_cycle",
+        "billing/commitment_adjustment_fees",
+        "billing/cost_and_usage_report",
+      ],
     },
     "faq/index",
   ],
