@@ -109,7 +109,7 @@ SP and RIs information are pulled daily into the platform.
 
 Antimetal passes all savings back to our customers and is **free for most customers**. 
 
-The only time we charge a fee is if your monthly bill is over $50k, per [<u>**our website pricing page**</u>](https://antimetal.com/#pricing)
+The only time we charge a fee is if your monthly bill is over $50k, per [<u>**our website pricing page.**</u>](https://antimetal.com/#pricing)
 </details>
 <br></br>
 
@@ -119,7 +119,11 @@ The only time we charge a fee is if your monthly bill is over $50k, per [<u>**ou
 **Why do the Antimetal invoice dates not match what I see in my Stripe billing portal?**
 
 </summary>
-We send out the detailed invoice on the 6th of the month. On the 8th of the month, we send a Stripe invoice (which automatically charges the payment method on file) which will have an associated receipt.  Stripe shows the 6th-8th since that's when we send out invoices, but invoices will always be for a single month of services.
+Antimetal invoices are sent on the 6th for infromation purposes while Stripe payments are processed on the 8th. 
+
+Invoices are issued for the charges from the most recent complete month (e.g., invoice sent on June 6th will be for the charges from May 1 ~ May 31). 
+
+More information can be found in [<u>**the billing cycle documentation.**</u>](/billing/billing_cycle)
 
 </details>
 
@@ -131,23 +135,25 @@ We send out the detailed invoice on the 6th of the month. On the 8th of the mont
 **Why did I get two bills after joining Antimetal?**
 
 </summary>
-The first month is the only month you will be seeing two bills, one from AWS and one from Antimetal since you joined in the middle of the month. Moving forward, you will only see one bill on your account.
+The first month is the only month you will be seeing two bills. One from AWS and one from Antimetal - the AWS bill is for the costs incurred before joining Antimetal.  
+
+Moving forward, you will only be receiving one bill from Antimetal.
 </details>
 
 <br></br>
 
-</details>
+<details>
 <summary>
 
 **Why does Stripe show a higher charge than what was listed on my Antimetal Invoice?**
 
 </summary>
-If you are paying with credit card, there is a 2.9% fee that is added to the total of your invoice and hence the reason why you may be seeing this difference. This fee can be avoided by changing the payment method to an approved bank or direct wire transfer.  Please feel welcome to reach out to support@antimetal.com if you have further questions. 
+If you are paying with a credit card, there is a 2.9% fee that is added to the total of your invoice and hence the reason why you may be seeing this difference. This fee can be avoided by changing the payment method to an approved bank or direct wire transfer.  Reach out to support@antimetal.com if you have further questions. 
 </details>
 
 <br></br>
 
-</details>
+<details>
 <summary>
 
 **How do I update my billing information?**
