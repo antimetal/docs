@@ -119,9 +119,9 @@ The only time we charge a fee is if your monthly bill is over $50k, per [<u>**ou
 **Why do the Antimetal invoice dates not match what I see in my Stripe billing portal?**
 
 </summary>
-Antimetal invoices are sent on the 6th for infromation purposes while Stripe payments are processed on the 8th. 
+Antimetal invoices are sent on the 6th for information purposes while Stripe payments are processed on the 8th. 
 
-Invoices are issued for the charges from the most recent complete month (e.g., invoice sent on June 6th will be for the charges from May 1 ~ May 31). 
+Charges are issued for the most recent complete month (e.g., Stripe charges issued on June 8th will be for the charges from May 1 ~ May 31). 
 
 More information can be found in [<u>**the billing cycle documentation.**</u>](/billing/billing_cycle)
 
