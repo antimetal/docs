@@ -109,8 +109,59 @@ SP and RIs information are pulled daily into the platform.
 
 Antimetal passes all savings back to our customers and is **free for most customers**. 
 
-The only time we charge a fee is if your monthly bill is over $50k, per [<u>**our website pricing page**</u>](https://antimetal.com/#pricing)
+The only time we charge a fee is if your monthly bill is over $50k, per [<u>**our website pricing page.**</u>](https://antimetal.com/#pricing)
 </details>
+<br></br>
+
+<details>
+<summary>
+
+**Why do the Antimetal invoice dates not match what I see in my Stripe billing portal?**
+
+</summary>
+Antimetal invoices are sent on the 6th for information purposes while Stripe payments are processed on the 8th. 
+
+Charges are issued for the most recent complete month (e.g., Stripe charges issued on June 8th will be for the charges from May 1 ~ May 31). 
+
+More information can be found in [<u>**the billing cycle documentation.**</u>](/billing/billing_cycle)
+
+</details>
+
+<br></br>
+
+<details>
+<summary>
+
+**Why did I get two bills after joining Antimetal?**
+
+</summary>
+The first month is the only month you will be seeing two bills. One from AWS and one from Antimetal - the AWS bill is for the costs incurred before joining Antimetal.  
+
+Moving forward, you will only be receiving one bill from Antimetal.
+</details>
+
+<br></br>
+
+<details>
+<summary>
+
+**Why does Stripe show a higher charge than what was listed on my Antimetal Invoice?**
+
+</summary>
+If you are paying with a credit card, there is a 2.9% fee that is added to the total of your invoice and hence the reason why you may be seeing this difference. This fee can be avoided by changing the payment method to an approved bank or direct wire transfer.  Reach out to support@antimetal.com if you have further questions. 
+</details>
+
+<br></br>
+
+<details>
+<summary>
+
+**How do I update my billing information?**
+
+</summary>
+You can update your billing information in Stripe directly from the Antimetal dashboard by selecting the "Billing" tab on the left side navigation panel and clicking the "Open Stripe Billing Portal" icon. If you encounter any issues with updating your information, please reach out to support@antimetal.com. 
+</details>
+
 <br></br>
 
 ### AWS
