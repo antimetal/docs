@@ -13,7 +13,7 @@ Antimetal is an AWS cloud cost optimization platform provider that helps busines
 
 <div class="button-container">
   <OverviewCard title = "Onboarding" content = "Get started integrating Antimetal into your AWS accounts." image ="/img/sidebar-icons/start.svg" link="/onboarding" alt="Product" newTab= {false} />
-  <OverviewCard title = "Product" content = "Learn what tools Antimetal offers to help you cut down on AWS costs and scale your business." image ="/img/sidebar-icons/product.svg" link="/product/savings/volume_discounts" alt="Product" newTab= {false} />
+  <OverviewCard title = "Product" content = "Learn what tools Antimetal offers to help you cut down on AWS costs and scale your business." image ="/img/sidebar-icons/product.svg" link="/product/savings/savings_plans_scheduler" alt="Product" newTab= {false} />
   <OverviewCard title = "Security" content = "Use the security features Antimetal has to ensure you maintain control of your AWS resources and sensitive information." image ="/img/sidebar-icons/security.svg" link="/security/iam_roles_explained" alt="Product" newTab= {false} />
   <OverviewCard title = "Billing" content = "See how Antimetal processes all AWS usage into a single invoice and what reports to expect." image ="/img/sidebar-icons/billing.svg" link="/billing/billing_cycle" alt="Product" newTab= {false} />
 </div>

@@ -40,9 +40,10 @@ const sidebars: SidebarsConfig = {
           collapsed: true,
           label: "Savings",
           items: [
-            "product/savings/volume_discounts",
+            "product/savings/savings_plans_scheduler",
             "product/savings/savings_plans",
             "product/savings/reserved_instances",
+            "product/savings/volume_discounts",
             "product/savings/tax",
             "product/savings/schedule",
             "product/savings/autopilot",
