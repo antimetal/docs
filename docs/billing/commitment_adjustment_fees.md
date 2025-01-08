@@ -21,6 +21,10 @@ Antimetal ingests the Cost And Usage Report and redistributes the `effective-cos
 
 To emphasize, Antimetal **does not take a fee from savings**. This redistribution system is simply put in place for the advantage of our customers. 
 
+You can verify this by looking at the `amortized costs` in Cost Explorer, instead of the default unblended cost:
+
+![Cost Toggle in Cost Explorer](/img/screenshots/amortized_costs.png)
+
 
 
 References:
