@@ -34,12 +34,25 @@ This guide walks you through setting up an IAM Role with CloudWatch access to en
     Scroll to the bottom and check the box confirming that the stack may create IAM resources.
   </Step>
   <Step title="Create the stack and copy the Role ARN">
-    Click **Create stack** and wait until the status shows `CREATE_COMPLETE`. Then go to the **Outputs** tab and copy the **Value** next to **AntimetalReadOnlyRole** — this is the Role ARN you'll paste into Antimetal.
+    Click **Create stack** and wait until the status shows `CREATE_COMPLETE`. Then go to the **Outputs** tab and copy the **Value** next to **RoleArn** — this is the Role ARN you'll paste into Antimetal.
   </Step>
   <Step title="Complete setup in Antimetal">
     Back in the Antimetal dashboard, paste the Role ARN, select your AWS region, and click **Add**. The External ID is pre-filled automatically.
   </Step>
 </Steps>
+
+## Update an existing integration
+
+When Antimetal asks you to update your permissions, follow these steps:
+
+1. Open [CloudFormation](https://console.aws.amazon.com/cloudformation/) in the AWS account and region where you created the Antimetal stack, then select that stack.
+2. Choose **Update**, then **Replace existing template**. Select **Amazon S3 URL** and enter:
+
+   `https://antimetal-cloudformation-templates.s3.amazonaws.com/antimetal-cloudwatch-role.yaml`
+
+3. Keep your existing **TrustedAccountId**, **RoleName**, and **ExcludedLogGroups** values. For **ExternalId**, select **Use existing value**.
+4. Keep the remaining stack options, acknowledge IAM resource changes, review the proposed update, and choose **Update stack**.
+5. Wait for `UPDATE_COMPLETE`. Your Role ARN stays the same, so you do not need to reconnect the integration in Antimetal.
 
 ## Resources
 
