@@ -46,13 +46,14 @@ This guide walks you through setting up an IAM Role with CloudWatch access to en
 When Antimetal asks you to update your permissions, follow these steps:
 
 1. Open [CloudFormation](https://console.aws.amazon.com/cloudformation/) in the AWS account and region where you created the Antimetal stack, then select that stack.
-2. Choose **Update**, then **Replace existing template**. Select **Amazon S3 URL** and enter:
+2. Choose **Update stack → Create a change set**. Keep **Standard change set** selected, choose **Replace existing template**, then select **Amazon S3 URL** and enter:
 
    `https://antimetal-cloudformation-templates.s3.amazonaws.com/antimetal-cloudwatch-role.yaml`
 
-3. Keep your existing **TrustedAccountId**, **RoleName**, and **ExcludedLogGroups** values. For **ExternalId**, select **Use existing value**.
-4. Keep the remaining stack options, acknowledge IAM resource changes, review the proposed update, and choose **Update stack**.
-5. Wait for `UPDATE_COMPLETE`. Your Role ARN stays the same, so you do not need to reconnect the integration in Antimetal.
+3. Keep your existing **TrustedAccountId**, **RoleName**, and **ExcludedLogGroups** values. For **ExternalId**, keep **Use previous value** checked.
+4. Keep the remaining stack options, including **Use existing role** under **Permissions**. Check the acknowledgment for IAM resources with custom names, then continue to the review page and choose **Create change set**. This creates a preview without applying the update.
+5. When the change set is ready, review the resource changes. The IAM role should show **Modify** with **Replacement: False**. If the role would be added, deleted, or replaced, contact Antimetal before proceeding.
+6. Choose **Execute change set** and wait for `UPDATE_COMPLETE`. Your Role ARN stays the same, so you do not need to reconnect the integration in Antimetal.
 
 ## Resources
 
