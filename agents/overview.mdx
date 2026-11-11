@@ -1,0 +1,70 @@
+---
+title: "Agent resources"
+sidebarTitle: "Overview"
+description: "Everything your AI agent needs to use Antimetal: the MCP server, the plugin and skills, agent-readable docs and a setup playbook."
+keywords: ["ai agents", "llms.txt", "mcp", "skills", "plugin", "markdown docs"]
+---
+
+Antimetal is built to be used by agents as well as people. Pick what fits your setup.
+
+<CardGroup cols={2}>
+  <Card title="MCP server" icon="plug" href="/agents/mcp">
+    Connect Claude, Cursor, VS Code, ChatGPT and more to `https://mcp.antimetal.com`.
+  </Card>
+  <Card title="Plugin and skills" icon="puzzle-piece" href="/agents/plugin">
+    The MCP server plus skills that teach Claude Code and Cursor how to investigate and fix.
+  </Card>
+  <Card title="MCP tools" icon="wrench" href="/agents/tools">
+    Every tool, what it changes, and a prompt to try.
+  </Card>
+  <Card title="Agent setup playbook" icon="list-check" href="/agents/get-started">
+    A page you hand to your coding agent. It sets up Antimetal and reports back.
+  </Card>
+</CardGroup>
+
+## Install in one step
+
+<CodeGroup>
+
+```bash Claude Code plugin
+/plugin marketplace add antimetal/skills
+/plugin install antimetal
+```
+
+```bash Any MCP client
+npx -y add-mcp "https://mcp.antimetal.com/?src=add-mcp"
+```
+
+```bash Claude Code (server only)
+claude mcp add --transport http antimetal "https://mcp.antimetal.com/?src=docs-claude-code"
+```
+
+</CodeGroup>
+
+Or hand the setup to your agent:
+
+```text
+Read https://docs.antimetal.com/agents/get-started.md and follow it to set up Antimetal.
+```
+
+## Docs your agent can read
+
+Every page on this site is also plain Markdown, so agents read it without parsing HTML.
+
+| Resource | URL | Use it for |
+| --- | --- | --- |
+| Markdown pages | Add `.md` to any URL, such as [`/agents/mcp.md`](https://docs.antimetal.com/agents/mcp.md) | Give an agent one page. |
+| Page index | [`/llms.txt`](https://docs.antimetal.com/llms.txt) | Let an agent find the right page. |
+| Full docs | [`/llms-full.txt`](https://docs.antimetal.com/llms-full.txt) | Load every page in one file. |
+| Docs MCP server | `https://docs.antimetal.com/mcp` | Let an agent search these docs as a tool. |
+
+Each page also has a menu at the top to **Copy page** as Markdown, or open it in ChatGPT, Claude, Cursor or VS Code.
+
+## What agents do with Antimetal
+
+- **Investigate.** "Why is checkout slow?" The agent asks Antimetal, reads the Issue's root cause and evidence, and explains it.
+- **Fix.** "Apply the fix for issue 412." The agent pulls the diff, adapts it to your code, opens a pull request and links it back to the Issue.
+- **Prevent.** "Run a database health check before the launch." The agent runs a [Patrol](/product/patrols) and works through what it finds.
+- **Teach.** "Tell Antimetal to ignore the legacy billing service." The agent steers the Patrol or adds a rule, so the next run is better.
+
+<Snippet file="need-help.mdx" />
