@@ -1,0 +1,98 @@
+---
+title: "MCP tools"
+description: "Every tool the Antimetal MCP server offers, what it does, and a prompt that uses it."
+keywords: ["mcp tools", "tools reference", "search_issues", "patrol", "ask"]
+---
+
+These are the tools your agent gets when it connects to the [Antimetal MCP server](/agents/mcp). You don't call them yourself: you ask in plain language, and your agent picks the tools. The prompts below show what to ask.
+
+<Info>
+  **Read** tools never change anything. **Write** tools change data in Antimetal only. No tool changes your cloud, your observability tools or your code, and none merges a pull request.
+</Info>
+
+Every tool that takes an Issue or Improvement accepts its number (`412`), its UUID or its Antimetal URL.
+
+## Ask
+
+| Tool | Type | What it does | Try asking |
+| --- | --- | --- | --- |
+| `ask` | Read | Asks Antimetal's agent a question about your infrastructure, costs or issues. Returns the answer and the metrics, logs and traces behind it. Pass the returned `conversation_id` to follow up. | "What changed in the checkout service since yesterday?" |
+| `get_artifact` | Read | Gets one piece of evidence (a metric, log query, trace or document) by the `documentId` a report or answer returned. | "Show me the raw logs behind that finding." |
+
+## Issues
+
+Issues are things going wrong now. See [Issue lifecycle](/product/issue-lifecycle).
+
+| Tool | Type | What it does | Try asking |
+| --- | --- | --- | --- |
+| `search_issues` | Read | Finds Issues by status, severity, environment and last activity, with literal or semantic text search. `sort: "priority"` returns the most urgent first. | "What are my open high severity issues in production?" |
+| `get_issue_report` | Read | Gets an Issue's investigation: root cause, causal graph, findings and timeline. | "Explain the root cause of issue 412." |
+| `get_issue_fixes` | Read | Gets the Issue's fix, with diffs that apply with `git apply`, and any pull request already opened. | "Apply the fix for issue 412 in this repo." |
+| `investigate_issue` | Write | Creates an Issue and starts an investigation. | "Investigate the 502s on the payments API since 9am." |
+| `update_issue_status` | Write | Moves an Issue to Investigating, Ready to fix, Resolved or Muted. | "Mark issue 412 resolved." |
+| `update_issue_assignee` | Write | Assigns an Issue, or unassigns it. | "Assign issue 412 to Priya." |
+| `submit_issue_feedback` | Write | Gives a thumbs up or down on an Issue's report, with an optional note. | "That root cause was wrong: it was the cache, not the DB. Tell Antimetal." |
+
+## Improvements
+
+Improvements are things to make better before they become Issues, such as a missing monitor or a risky config. [Patrols](/product/patrols) create most of them. The Improvement tools mirror the Issue tools.
+
+| Tool | Type | What it does | Try asking |
+| --- | --- | --- | --- |
+| `search_improvements` | Read | Finds Improvements by status and text. | "What improvements are ready to fix for checkout?" |
+| `get_improvement_report` | Read | Gets an Improvement's report: what is at risk and why. | "Summarize improvement 88." |
+| `get_improvement_fixes` | Read | Gets the Improvement's suggested change, with diffs. | "Open a PR for improvement 88." |
+| `update_improvement_status` | Write | Changes an Improvement's status. | "Dismiss improvement 88, we accept that risk." |
+| `update_improvement_assignee` | Write | Assigns an Improvement, or unassigns it. | "Assign improvement 88 to me." |
+| `submit_improvement_feedback` | Write | Gives a thumbs up or down on an Improvement's report. | "That improvement isn't useful for us. Give feedback." |
+| `list_assignees` | Read | Lists teammates you can assign Issues and Improvements to. | "Who can I assign this to?" |
+
+## Patrols
+
+Patrols check part of your system on a schedule and report what they find. See [Patrols](/product/patrols) and [Patrol workflows](/product/patrol-workflows).
+
+| Tool | Type | What it does | Try asking |
+| --- | --- | --- | --- |
+| `list_patrols` | Read | Lists your Patrols. Archived ones on request. | "Which patrols do we have?" |
+| `get_patrol` | Read | Gets one Patrol's scope, schedule and instructions. | "What does the checkout service health check look at?" |
+| `create_patrol` | Write | Creates a Patrol from a template, with its scope, schedule and instructions. | "Create a daily database health check for orders-db in production." |
+| `run_patrol` | Write | Starts a run now, without changing the schedule. You can set a one-off time window. | "Run the error sweep now over the last 24 hours." |
+| `list_patrol_runs` | Read | Lists a Patrol's runs, newest first. | "Did last night's patrol run finish?" |
+| `get_patrol_run` | Read | Gets a run's report: each finding, whether it is an Issue, an Improvement or healthy, and its fix. | "What did the last database health check find?" |
+| `list_events` | Read | Lists alerts and Patrol findings across all runs, with the Issues and Improvements they became. | "What did my patrols find this week that nobody picked up?" |
+| `update_patrol` | Write | Steers a Patrol by adding to or editing its saved instructions. | "Tell the error sweep to ignore 404s from the legacy API." |
+| `update_patrol_schedule` | Write | Changes when a Patrol runs: once, or on a cron in your timezone. | "Run the service health check every weekday at 8am Pacific." |
+| `update_patrol_status` | Write | Archives a Patrol, or restores it. History stays readable. | "Archive the launch-week patrol." |
+| `submit_patrol_feedback` | Write | Gives a thumbs up or down on a run's report or one finding. | "Finding 3 was noise. Give it a thumbs down." |
+
+## Related work
+
+Links between Issues and the work done on them: pull requests, commits, tickets and docs.
+
+| Tool | Type | What it does | Try asking |
+| --- | --- | --- | --- |
+| `list_related_work` | Read | Lists what is linked to an Issue or Improvement. | "Is anyone already working on issue 412?" |
+| `attach_link` | Write | Links a pull request, commit, ticket or page, with a sentence on why. Safe to repeat. | "Link my PR to issue 412." |
+| `remove_link` | Write | Removes a link by its URL. | "That ticket isn't related, remove it." |
+
+<Note>
+  Related work tools appear only when Related work is turned on for your organization.
+</Note>
+
+## Organization settings
+
+These change how Antimetal works for everyone in your organization. Ask for them only for a lasting preference.
+
+| Tool | Type | What it does | Try asking |
+| --- | --- | --- | --- |
+| `list_rules` | Read | Lists your rules: directives Antimetal follows in every investigation and fix. | "What rules have we set?" |
+| `get_rule` | Read | Gets one rule. | "Show me the deploy rule." |
+| `upsert_rule` | Write | Creates a rule or replaces its content. | "Add a rule: never suggest restarting the primary database." |
+| `update_rule` | Write | Appends to a rule or edits one passage. | "Add the staging cluster to the deploy rule." |
+| `delete_rule` | Write | Deletes a rule. | "Delete the old on-call rule." |
+| `get_severity_rules` | Read | Reads how Antimetal decides severity. | "How does Antimetal rank severity for us?" |
+| `update_severity_rules` | Write | Changes severity guidance for future investigations. | "Treat anything that touches payments as high severity." |
+| `get_semantic_tag_configuration` | Read | Reads the tags Antimetal applies to Issues and fixes. | "What tags can Antimetal apply?" |
+| `update_semantic_tag_configuration` | Write | Changes those tags for future runs. | "Add a 'data-loss' tag for incidents that drop writes." |
+
+<Snippet file="need-help.mdx" />

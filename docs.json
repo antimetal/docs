@@ -33,7 +33,20 @@
         "groups": [
           {
             "group": "Getting Started",
-            "pages": ["index", "quick-start", "connect"]
+            "pages": [
+              "index",
+              "quick-start"
+            ]
+          },
+          {
+            "group": "Agents and MCP",
+            "pages": [
+              "agents/overview",
+              "agents/mcp",
+              "agents/plugin",
+              "agents/tools",
+              "agents/get-started"
+            ]
           },
           {
             "group": "Integrations",
@@ -62,19 +75,28 @@
               },
               {
                 "group": "Incident Management",
-                "pages": ["integrations/pagerduty", "integrations/incident-io"]
+                "pages": [
+                  "integrations/pagerduty",
+                  "integrations/incident-io"
+                ]
               },
               {
                 "group": "Source Control",
-                "pages": ["integrations/github"]
+                "pages": [
+                  "integrations/github"
+                ]
               },
               {
                 "group": "CI/CD",
-                "pages": ["integrations/azure-devops"]
+                "pages": [
+                  "integrations/azure-devops"
+                ]
               },
               {
                 "group": "Chat",
-                "pages": ["integrations/slack"]
+                "pages": [
+                  "integrations/slack"
+                ]
               }
             ]
           },
@@ -84,12 +106,21 @@
               "product/search",
               "product/issue-lifecycle",
               "product/fixes",
-              "product/skills"
+              {
+                "group": "Patrols",
+                "pages": [
+                  "product/patrols",
+                  "product/patrol-workflows",
+                  "product/improvements"
+                ]
+              }
             ]
           },
           {
             "group": "Admin",
-            "pages": ["admin/security"]
+            "pages": [
+              "admin/security"
+            ]
           }
         ]
       },
@@ -142,5 +173,15 @@
     "gtm": {
       "tagId": "GTM-PQ2NP8K6"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/connect",
+      "destination": "/agents/mcp"
+    },
+    {
+      "source": "/product/skills",
+      "destination": "/agents/plugin"
+    }
+  ]
 }

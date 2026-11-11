@@ -1,0 +1,79 @@
+---
+title: "Plugin and skills"
+description: "Install the Antimetal plugin in Claude Code or Cursor: the MCP server plus skills that teach your agent how to investigate and fix."
+keywords: ["plugin", "skills", "claude code", "cursor", "agent skills"]
+---
+
+The Antimetal plugin bundles two things:
+
+- The [MCP server](/agents/mcp), which takes actions: it reads and changes your Antimetal data.
+- **Skills**, which shape how your agent works. A skill tells the agent when to use Antimetal, which tools to call and in what order. For example, `/investigate` reads the root cause and evidence before the agent touches your code.
+
+Use the plugin in Claude Code and Cursor. In other tools, connect the [MCP server](/agents/mcp) directly.
+
+## Install
+
+<Tabs>
+  <Tab title="Claude Code">
+    In a Claude Code session, add the Antimetal marketplace and install the plugin:
+
+    ```bash
+    /plugin marketplace add antimetal/skills
+    /plugin install antimetal
+    ```
+
+    The first time you use an Antimetal tool or skill, Claude Code opens your browser to sign in. Claude Code stores the token and refreshes it.
+  </Tab>
+  <Tab title="Cursor">
+    Install **Antimetal** from the [Cursor Marketplace](https://cursor.com/marketplace), or run:
+
+    ```bash
+    /add-plugin antimetal/skills
+    ```
+
+    The Cursor plugin signs in with an API key:
+
+    1. Create a key in [Settings › API keys](https://overlook.antimetal.com/settings/api-keys).
+    2. Add it to your shell profile (`~/.zshrc`, `~/.bashrc`) so it persists:
+
+       ```bash
+       export ANTIMETAL_API_KEY="your-api-key"
+       ```
+
+    3. Restart Cursor.
+  </Tab>
+  <Tab title="Other tools">
+    Connect the [MCP server](/agents/mcp). The server also serves the same skills through its `list_skills` and `load_skill` tools, so agents in any client can load them on demand.
+  </Tab>
+</Tabs>
+
+## Skills
+
+| Skill | Use it when |
+| --- | --- |
+| `/investigate` | Something is wrong and you want to know why. Searches Issues, asks Antimetal, reads the report and causal graph, and routes you to a fix. |
+| `/fix` | You want Antimetal's fix in your codebase. Pulls the fix, adapts it to your local code, and links the pull request back to the Issue. |
+| `/antimetal-mcp-setup` | You need to connect or repair the MCP connection, with OAuth or an API key. |
+
+Skills load only when they apply, so they cost no context until your agent needs them.
+
+## Skills from the MCP server
+
+The MCP server serves skills too, so they stay current without a plugin update:
+
+- `list_skills` returns each skill's name and when to use it.
+- `load_skill` returns a skill's instructions, or one of its reference files.
+
+The server's instructions tell your agent to check these before it starts an Antimetal task. Clients that support the MCP skills extension can also read each skill as a `skill://antimetal/<skill>/SKILL.md` resource.
+
+## Example prompts
+
+```text
+Investigate the login latency spike from this morning
+What are the open high severity issues?
+Apply the fix for the Redis connection timeout issue and open a PR
+Run a service health check on checkout-svc before the launch
+What did my patrols find this week?
+```
+
+<Snippet file="need-help.mdx" />

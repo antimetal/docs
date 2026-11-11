@@ -1,0 +1,93 @@
+---
+title: "Patrol workflows"
+description: "Where Patrols fit in your team's week: before a launch, after an incident, on a schedule, and from your coding agent."
+keywords: ["patrol", "workflow", "launch readiness", "post-incident", "posture review", "mcp"]
+---
+
+A [Patrol](/product/patrols) is only useful if someone acts on what it finds. This page shows the workflows teams use, each with the Patrol to set up, when it runs, and what you do with the results.
+
+## The loop
+
+Every workflow below is the same loop:
+
+<Steps>
+  <Step title="Scope it">
+    Pick a template and point it at the services, repos and environments you care about. Narrow beats broad: a Patrol on `checkout-svc` in production finds more than one on everything.
+  </Step>
+  <Step title="Run it">
+    Run it once now, or on a schedule. Each run produces a report.
+  </Step>
+  <Step title="Act on the findings">
+    Each finding is an **Issue** (something is wrong now), an **Improvement** (something to make better) or **healthy** (checked, nothing to do). Issues and Improvements land in your queues with a proposed fix, like any other.
+  </Step>
+  <Step title="Steer it">
+    Thumbs up or down on findings, and add instructions for what to focus on or ignore. The next run follows them.
+  </Step>
+</Steps>
+
+## Before a launch or traffic event
+
+**Use when:** you ship a big feature, start a marketing push, or expect a traffic spike.
+
+1. A week before, create a **Service health check** for each service on the launch path, in production, with a one-off schedule. Add the endpoints the launch depends on.
+2. Add a **Database health check** for the databases those services use.
+3. Run them. Work through the Issues first: those are live problems. Then pick the Improvements you can land before launch day.
+4. The day before, run them again to confirm the fixes held.
+5. During launch week, switch the service health check to run every few hours. Archive it afterwards.
+
+Add instructions that name the event, so findings are judged against it:
+
+```text
+We launch the new checkout on Friday and expect 5x normal traffic on POST /checkout.
+Flag anything that would not hold at that load.
+```
+
+## After an incident
+
+**Use when:** an [Issue](/product/issue-lifecycle) is resolved and you want to make sure it, and things like it, don't come back.
+
+1. From the resolved Issue, note the service and the failure mode.
+2. Create a **Service health check** on that service, running daily for the next two weeks.
+3. Add instructions that describe the incident, such as *"Last week connection pool exhaustion took down orders-api. Watch pool saturation and retry storms."*
+4. Review each run. If the fix regresses, the finding comes back as an Issue linked to the work already done.
+5. When two weeks pass clean, change the schedule to weekly or archive the Patrol.
+
+## Weekly posture review
+
+**Use when:** you want a standing check on the systems your team owns, without waiting for alerts.
+
+1. Create one **Service health check** per critical service and one **Database health check** per production database, each running weekly before your team's planning meeting.
+2. Keep the **Error sweep** on. It runs often and finds errors that no monitor catches.
+3. In the meeting, open [Improvements](/product/improvements), sorted by severity. Assign the ones you'll fix this week and dismiss the ones you accept.
+4. Give feedback on findings that missed the mark, so next week's run is sharper.
+
+## Catch what your monitors miss
+
+**Use when:** you're not sure your alerts cover what matters.
+
+The **Error sweep** scans your logs for errors no existing monitor catches, surfaces anomalies, and recommends monitors you should have. Antimetal turns it on for new organizations. Leave it running, and treat its Improvements as your monitoring backlog: each one names the monitor to add and why.
+
+## From your coding agent
+
+Everything above works from Claude Code, Cursor or any client connected to the [Antimetal MCP server](/agents/mcp). Ask in plain language:
+
+| You ask | Your agent calls |
+| --- | --- |
+| "Set up a daily database health check on orders-db in production." | `create_patrol` |
+| "Run the checkout service health check now." | `run_patrol`, then `get_patrol_run` when it finishes |
+| "What did my patrols find this week that nobody picked up?" | `list_events` with Patrol findings that are unlinked |
+| "Fix the top finding from last night's run and open a PR." | `get_patrol_run`, then `get_improvement_fixes` or `get_issue_fixes` |
+| "Tell the error sweep to ignore 404s from the legacy API." | `update_patrol` |
+| "That finding was noise." | `submit_patrol_feedback` |
+| "Run the health check every weekday at 8am Pacific." | `update_patrol_schedule` |
+
+A good habit: after you deploy, ask your agent to run the Patrol that covers what you changed, and to fix what it finds before you move on.
+
+## Tips
+
+- **One Patrol, one question.** Several narrow Patrols beat one broad one. They are faster, cheaper and easier to steer.
+- **Name the stakes in the instructions.** "This service handles payments" changes what counts as serious.
+- **Match the cadence to how fast things change.** Errors change by the hour; database storage changes by the week.
+- **Archive, don't delete.** Archiving stops runs and keeps the history, so you can restore the Patrol for the next launch.
+
+<Snippet file="need-help.mdx" />

@@ -1,0 +1,133 @@
+---
+title: "Agent setup playbook"
+sidebarTitle: "Agent setup playbook"
+description: "Instructions for a coding agent: set up Antimetal for the user, verify it works, and report back."
+keywords: ["get started", "agent", "setup", "playbook", "mcp", "plugin"]
+---
+
+<Info>
+  **For people:** give this page to your coding agent. Paste this prompt:
+
+  ```text
+  Read https://docs.antimetal.com/agents/get-started.md and follow it to set up Antimetal.
+  ```
+
+  **For agents:** the rest of this page is for you. Follow the steps in order. Ask the user before each step that changes their configuration.
+</Info>
+
+## Goal
+
+Connect this machine's AI tool to Antimetal, confirm one authenticated call works, and report the result to the user in the status block at the end.
+
+Antimetal investigates production problems, proposes fixes and runs scheduled checks called Patrols. Its MCP server is `https://mcp.antimetal.com`. It uses OAuth, so the user signs in once in a browser. Never ask the user to paste a password or token into the chat.
+
+## Step 1: Find out where you are running
+
+Work out which client you are running in: Claude Code, Cursor, VS Code with Copilot, Codex, Windsurf, Gemini CLI, Goose, OpenCode or another. If you can't tell, ask the user.
+
+Check whether an `antimetal` MCP server is already configured:
+
+- **Claude Code:** run `claude mcp list`.
+- **Cursor:** read `~/.cursor/mcp.json` and `.cursor/mcp.json`.
+- **VS Code:** read `.vscode/mcp.json` and the user's `mcp.json`.
+- **Codex:** read `~/.codex/config.toml`.
+- **Other clients:** read the client's MCP config file.
+
+If it is configured and its tools are available to you, skip to step 4.
+
+## Step 2: Install
+
+Prefer the plugin in Claude Code and Cursor, because it adds skills as well as the server.
+
+**Claude Code.** Tell the user to run these in the session (plugin commands are interactive):
+
+```text
+/plugin marketplace add antimetal/skills
+/plugin install antimetal
+```
+
+If they prefer the server only, run:
+
+```bash
+claude mcp add --transport http antimetal "https://mcp.antimetal.com/?src=agent-playbook"
+```
+
+**Cursor.** Tell the user to install **Antimetal** from the Cursor Marketplace, or add this to `~/.cursor/mcp.json`:
+
+```json
+{ "mcpServers": { "antimetal": { "url": "https://mcp.antimetal.com/?src=agent-playbook" } } }
+```
+
+**Codex.**
+
+```bash
+codex mcp add antimetal --url "https://mcp.antimetal.com/?src=agent-playbook"
+```
+
+**VS Code.**
+
+```bash
+code --add-mcp '{"name":"antimetal","type":"http","url":"https://mcp.antimetal.com/?src=agent-playbook"}'
+```
+
+**Any other client.** Run this. It detects installed clients and asks which to configure:
+
+```bash
+npx -y add-mcp "https://mcp.antimetal.com/?src=agent-playbook"
+```
+
+For anything else, use the per-client steps in [MCP server](/agents/mcp#supported-clients).
+
+## Step 3: Sign in
+
+Tell the user how to start the OAuth sign-in in their client. They complete it in the browser:
+
+- **Claude Code:** run `/mcp`, select **antimetal**, choose **Authenticate**.
+- **Cursor:** **Cursor Settings** › **MCP**, select **Connect** next to **antimetal**.
+- **VS Code:** select **Start** above the server in `mcp.json`.
+- **Codex:** run `codex mcp login antimetal`.
+- **Gemini CLI:** run `/mcp auth antimetal`.
+- **OpenCode:** run `opencode mcp auth antimetal`.
+
+If the environment has no browser (CI, a remote box), use an API key instead. Ask the user to create one at `https://overlook.antimetal.com/settings/api-keys` and set it as the `ANTIMETAL_API_KEY` environment variable themselves. Then configure the header `Authorization: Bearer ${ANTIMETAL_API_KEY}`. See [Use an API key](/agents/mcp#use-an-api-key).
+
+Many clients load new MCP servers only at startup. If the tools don't appear, ask the user to restart the client or the session, then continue from step 4.
+
+## Step 4: Verify
+
+1. If the `list_skills` tool is available, call it. Load any skill that matches what the user wants to do next with `load_skill`.
+2. Call `search_issues` with `{"status": "ready_to_fix", "limit": 3}`.
+3. A list (even an empty one) means it works. A 401 means the sign-in did not finish: repeat step 3.
+4. If the result is empty, call `list_patrols` to confirm the organization has data.
+
+If calls succeed but every answer is empty, the organization may have no integrations yet. Tell the user to connect them at `https://overlook.antimetal.com/integrations`. See [Integrations](/integrations/overview).
+
+## Step 5: Show the user one useful thing
+
+Offer one of these, based on what you found:
+
+- Open Issues: "Want me to explain the root cause of issue `<number>`?"
+- No open Issues: "Want me to set up a Patrol to check `<service>` every day?" See [Patrol workflows](/product/patrol-workflows).
+- Inside a repo with an Issue that has a fix: "Want me to apply the fix for issue `<number>` and open a pull request?"
+
+## Step 6: Report
+
+End with this block, filled in:
+
+```text
+Antimetal setup
+- Client: <client name and version>
+- Install method: <plugin | claude mcp add | add-mcp | config file | other>
+- Auth: <OAuth | API key>
+- Verification: <search_issues returned N issues | failed: reason>
+- Skills: <list_skills returned N skills | not available>
+- Integrations: <data present | none connected>
+- Next step: <what you offered the user>
+```
+
+## If something fails
+
+- **Sign-in window doesn't open:** check the URL is `https://mcp.antimetal.com` with no extra path. Try [mcp-remote](/agents/mcp#other-clients).
+- **401 after sign-in:** clear the stored sign-in and authenticate again. See [Troubleshooting](/agents/mcp#troubleshooting).
+- **Tools don't appear:** restart the client. Check the server is turned on for this chat or project.
+- Still stuck: tell the user to contact [support@antimetal.com](mailto:support@antimetal.com) and include the status block.

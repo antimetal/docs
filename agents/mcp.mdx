@@ -1,0 +1,367 @@
+---
+title: "MCP server"
+sidebarTitle: "MCP server"
+description: "Connect Claude, Cursor, VS Code, ChatGPT and other AI tools to Antimetal's hosted MCP server."
+keywords: ["mcp", "model context protocol", "claude code", "cursor", "vscode", "codex", "chatgpt", "oauth"]
+---
+
+Antimetal runs a hosted [Model Context Protocol](https://modelcontextprotocol.io) server. Connect it to your AI tool and your agent can work with Antimetal the same way you do in the app.
+
+```text
+https://mcp.antimetal.com
+```
+
+- **Hosted.** Nothing to install or run. The server uses Streamable HTTP.
+- **OAuth.** You sign in with your Antimetal account the first time you use it. An [API key](#use-an-api-key) also works.
+- **Scoped to you.** Every call runs as you, inside your organization, with your permissions.
+
+With it, your agent can:
+
+- Find and read [Issues](/product/issue-lifecycle): root cause, findings, causal graph and evidence.
+- Pull a fix and apply it in your repo, then link the pull request back to the Issue.
+- Create, run and steer [Patrols](/product/patrols), and act on what they find.
+- Ask Antimetal questions about your infrastructure, with the metrics, logs and traces behind each answer.
+
+<Note>
+  Antimetal can only answer from the data it can reach. [Connect your integrations](/integrations/overview) first.
+</Note>
+
+## Quick setup
+
+<Tabs>
+  <Tab title="Claude Code or Cursor">
+    Install the Antimetal plugin. It adds the MCP server and the Antimetal skills in one step.
+
+    ```bash Claude Code
+    /plugin marketplace add antimetal/skills
+    /plugin install antimetal
+    ```
+
+    In Cursor, search for **Antimetal** in the [Cursor Marketplace](https://cursor.com/marketplace), or run `/add-plugin antimetal/skills`. See [Plugin and skills](/agents/plugin).
+  </Tab>
+  <Tab title="Any other client">
+    Run [add-mcp](https://github.com/neondatabase/add-mcp). It finds the AI tools installed on your machine and adds Antimetal to each one you pick.
+
+    ```bash
+    npx -y add-mcp "https://mcp.antimetal.com/?src=add-mcp"
+    ```
+
+    Then open your tool and sign in when it asks.
+  </Tab>
+</Tabs>
+
+<CardGroup cols={3}>
+  <Card title="Add to Cursor" icon="arrow-pointer" href="cursor://anysphere.cursor-deeplink/mcp/install?name=antimetal&config=eyJ1cmwiOiJodHRwczovL21jcC5hbnRpbWV0YWwuY29tLz9zcmM9Y3Vyc29yLWJ1dHRvbiJ9">
+    Opens Cursor with Antimetal filled in.
+  </Card>
+  <Card title="Add to VS Code" icon="code" href="vscode:mcp/install?%7B%22name%22%3A%22antimetal%22%2C%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.antimetal.com%2F%3Fsrc%3Dvscode-button%22%7D">
+    Opens VS Code with Antimetal filled in.
+  </Card>
+  <Card title="Add to Goose" icon="feather" href="goose://extension?url=https%3A%2F%2Fmcp.antimetal.com%2F%3Fsrc%3Dgoose-button&type=streamable_http&id=antimetal&name=Antimetal&description=Investigate%20issues%2C%20run%20Patrols%20and%20ship%20fixes%20with%20Antimetal">
+    Opens Goose with Antimetal filled in.
+  </Card>
+</CardGroup>
+
+<Tip>
+  Check that it works. Ask your agent: *"Use Antimetal to list my open high severity issues."* It should call `search_issues` and answer with Issue numbers and links.
+</Tip>
+
+## Supported clients
+
+Every client below supports OAuth for remote MCP servers. You sign in once in the browser, and the client stores and refreshes the token.
+
+<Note>
+  The `src` value in each URL tells us which setup path you used. It does not change what the server does, and you can leave it out.
+</Note>
+
+### Claude Code
+
+```bash
+claude mcp add --transport http antimetal "https://mcp.antimetal.com/?src=docs-claude-code"
+```
+
+Then run `/mcp` in a Claude Code session, select **antimetal** and choose **Authenticate**. Add `--scope project` to share the server with your team through `.mcp.json`, or `--scope user` to use it in every project.
+
+For the full experience, install the [plugin](/agents/plugin) instead. It adds the server and the Antimetal skills.
+
+### Claude.ai and Claude Desktop
+
+Custom connectors work on Free, Pro, Max, Team and Enterprise plans.
+
+1. Open **Settings** › **Connectors** and select **Add custom connector**.
+2. Set **Name** to `Antimetal` and **URL** to `https://mcp.antimetal.com/?src=docs-claude-ai`.
+3. Select **Add**, then **Connect**, and sign in to Antimetal.
+
+On Team and Enterprise plans, an owner adds the connector once in **Admin settings** › **Connectors**. Members then select **Connect** to sign in.
+
+To use it in a chat, open the **Search and tools** menu and turn on **Antimetal**.
+
+### Cursor
+
+Use the [Add to Cursor](cursor://anysphere.cursor-deeplink/mcp/install?name=antimetal&config=eyJ1cmwiOiJodHRwczovL21jcC5hbnRpbWV0YWwuY29tLz9zcmM9Y3Vyc29yLWJ1dHRvbiJ9) button, install the [plugin](/agents/plugin), or add this to `~/.cursor/mcp.json` (all projects) or `.cursor/mcp.json` (one project):
+
+```json mcp.json
+{
+  "mcpServers": {
+    "antimetal": {
+      "url": "https://mcp.antimetal.com/?src=docs-cursor"
+    }
+  }
+}
+```
+
+Open **Cursor Settings** › **MCP** and select **Connect** next to **antimetal** to sign in.
+
+### VS Code with GitHub Copilot
+
+Use the [Add to VS Code](vscode:mcp/install?%7B%22name%22%3A%22antimetal%22%2C%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.antimetal.com%2F%3Fsrc%3Dvscode-button%22%7D) button ([Insiders](vscode-insiders:mcp/install?%7B%22name%22%3A%22antimetal%22%2C%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.antimetal.com%2F%3Fsrc%3Dvscode-button%22%7D)), run this command:
+
+```bash
+code --add-mcp '{"name":"antimetal","type":"http","url":"https://mcp.antimetal.com/?src=docs-vscode"}'
+```
+
+Or add the server to `.vscode/mcp.json` in your workspace:
+
+```json .vscode/mcp.json
+{
+  "servers": {
+    "antimetal": {
+      "type": "http",
+      "url": "https://mcp.antimetal.com/?src=docs-vscode"
+    }
+  }
+}
+```
+
+Select **Start** above the server in `mcp.json`, then sign in. Use the tools in Copilot Chat's **Agent** mode.
+
+### ChatGPT
+
+Custom MCP connectors need developer mode, which is available on Plus, Pro, Business, Enterprise and Edu plans.
+
+1. Open **Settings** › **Apps & Connectors** › **Advanced settings** and turn on **Developer mode**.
+2. Go back to **Apps & Connectors** and select **Create**.
+3. Set **Name** to `Antimetal`, **MCP server URL** to `https://mcp.antimetal.com/?src=docs-chatgpt` and **Authentication** to **OAuth**.
+4. Select **Create** and sign in to Antimetal.
+
+In a chat, select **Developer mode** from the tools menu and add **Antimetal**. ChatGPT asks you to confirm each write action.
+
+### Codex
+
+```bash
+codex mcp add antimetal --url "https://mcp.antimetal.com/?src=docs-codex"
+codex mcp login antimetal
+```
+
+Or add it to `~/.codex/config.toml`, then run `codex mcp login antimetal`:
+
+```toml ~/.codex/config.toml
+[mcp_servers.antimetal]
+url = "https://mcp.antimetal.com/?src=docs-codex"
+```
+
+The same configuration is used by the Codex IDE extension.
+
+### Windsurf
+
+Open **Windsurf Settings** › **Cascade** › **MCP Servers** › **View raw config**, or edit `~/.codeium/windsurf/mcp_config.json`:
+
+```json mcp_config.json
+{
+  "mcpServers": {
+    "antimetal": {
+      "serverUrl": "https://mcp.antimetal.com/?src=docs-windsurf"
+    }
+  }
+}
+```
+
+Save, then select **Refresh** in the MCP panel and sign in.
+
+### Gemini CLI
+
+```bash
+gemini mcp add --transport http antimetal "https://mcp.antimetal.com/?src=docs-gemini-cli"
+```
+
+Start `gemini` and run `/mcp auth antimetal` to sign in.
+
+### Goose
+
+Use the [Add to Goose](goose://extension?url=https%3A%2F%2Fmcp.antimetal.com%2F%3Fsrc%3Dgoose-button&type=streamable_http&id=antimetal&name=Antimetal&description=Investigate%20issues%2C%20run%20Patrols%20and%20ship%20fixes%20with%20Antimetal) button. Or run `goose configure`, choose **Add Extension** › **Remote Extension (Streamable HTTP)**, name it `antimetal` and enter `https://mcp.antimetal.com/?src=docs-goose`.
+
+### OpenCode
+
+Add the server to `opencode.json`:
+
+```json opencode.json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "antimetal": {
+      "type": "remote",
+      "url": "https://mcp.antimetal.com/?src=docs-opencode",
+      "enabled": true
+    }
+  }
+}
+```
+
+Then run `opencode mcp auth antimetal` to sign in.
+
+### Other clients
+
+Most clients that support remote MCP servers take a JSON entry like this:
+
+```json
+{
+  "mcpServers": {
+    "antimetal": {
+      "type": "http",
+      "url": "https://mcp.antimetal.com/?src=docs-other"
+    }
+  }
+}
+```
+
+If your client only supports local (stdio) servers, or does not support OAuth, run the server through [mcp-remote](https://www.npmjs.com/package/mcp-remote). It handles the sign-in in your browser:
+
+```json
+{
+  "mcpServers": {
+    "antimetal": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.antimetal.com/?src=docs-mcp-remote"]
+    }
+  }
+}
+```
+
+### Use an API key
+
+Use an API key when no person can sign in, for example in CI or a scheduled agent.
+
+1. Create a key in [Settings › API keys](https://overlook.antimetal.com/settings/api-keys). Name it after where it runs.
+2. Store it as an environment variable, such as `ANTIMETAL_API_KEY`. Never commit it.
+3. Send it as a bearer token:
+
+<CodeGroup>
+
+```bash Claude Code
+claude mcp add --transport http antimetal https://mcp.antimetal.com \
+  --header "Authorization: Bearer $ANTIMETAL_API_KEY"
+```
+
+```toml Codex
+[mcp_servers.antimetal]
+url = "https://mcp.antimetal.com"
+bearer_token_env_var = "ANTIMETAL_API_KEY"
+```
+
+```json VS Code
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "antimetal-api-key",
+      "description": "Antimetal API key",
+      "password": true
+    }
+  ],
+  "servers": {
+    "antimetal": {
+      "type": "http",
+      "url": "https://mcp.antimetal.com",
+      "headers": { "Authorization": "Bearer ${input:antimetal-api-key}" }
+    }
+  }
+}
+```
+
+```json Other clients
+{
+  "mcpServers": {
+    "antimetal": {
+      "type": "http",
+      "url": "https://mcp.antimetal.com",
+      "headers": { "Authorization": "Bearer ${ANTIMETAL_API_KEY}" }
+    }
+  }
+}
+```
+
+</CodeGroup>
+
+Calls made with an API key run as the key's service user, not as a person. Links and feedback they leave show as "Added by Cursor (API key)".
+
+## What your agent can do
+
+The server groups its tools by job. See [MCP tools](/agents/tools) for every tool and a sample prompt for each.
+
+| Job | Tools | Try asking |
+| --- | --- | --- |
+| Ask a question | `ask` | "Why did checkout latency go up yesterday?" |
+| Find work | `search_issues`, `search_improvements`, `list_events` | "What are my open high severity issues in production?" |
+| Read an investigation | `get_issue_report`, `get_artifact` | "Explain the root cause of issue 412." |
+| Fix it | `get_issue_fixes`, `attach_link` | "Apply the fix for issue 412 and open a pull request." |
+| Start an investigation | `investigate_issue` | "Investigate the 502s on the payments API since 9am." |
+| Run Patrols | `list_patrols`, `create_patrol`, `run_patrol`, `get_patrol_run` | "Run a database health check on orders-db before Friday's launch." |
+| Steer Antimetal | `update_patrol`, `upsert_rule`, `submit_issue_feedback` | "Tell the error sweep to ignore the legacy billing service." |
+
+Your client decides when to call a tool. Most clients show each call and ask before running a tool that changes something.
+
+## Plugin, skills and the MCP server
+
+The **MCP server** takes actions: it reads and changes your Antimetal data. The **plugin** shapes how your agent works: its skills teach the agent when to use Antimetal and in what order, for example to read the root cause before it edits code. The plugin also installs the MCP server.
+
+Use the plugin in Claude Code and Cursor. Use the MCP server on its own everywhere else. See [Plugin and skills](/agents/plugin).
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The sign-in window does not open, or sign-in fails">
+    - Check the URL is exactly `https://mcp.antimetal.com`, with `https` and no extra path.
+    - Sign in to [Antimetal](https://overlook.antimetal.com) in your browser first, then try again.
+    - If your company uses SSO, sign in with the same account you use for Antimetal.
+    - If your client does not support OAuth, use [mcp-remote](#other-clients) or an [API key](#use-an-api-key).
+  </Accordion>
+  <Accordion title="The server connects but shows no tools, or calls fail with 401">
+    Your token expired or was revoked. Clear the stored sign-in and connect again:
+
+    - **Claude Code:** run `/mcp`, select **antimetal** and choose **Clear authentication**, then **Authenticate**.
+    - **Cursor:** in **Cursor Settings** › **MCP**, select **Logout** next to **antimetal**, then **Connect**.
+    - **VS Code:** run **MCP: List Servers**, select **antimetal**, choose **Disconnect Account**, then **Start**.
+    - **Codex:** run `codex mcp logout antimetal`, then `codex mcp login antimetal`.
+    - **mcp-remote:** delete `~/.mcp-auth`, then restart your client.
+
+    For an API key, check the key still shows in [Settings › API keys](https://overlook.antimetal.com/settings/api-keys).
+  </Accordion>
+  <Accordion title="The agent does not use Antimetal">
+    Name it in your prompt: *"Use Antimetal to…"*. Check the server is turned on for the chat or project. Some clients limit how many tools are active at once, so turn off servers you don't need.
+  </Accordion>
+  <Accordion title="Answers are empty or say data is missing">
+    Antimetal answers from your connected integrations. Check [Integrations](https://overlook.antimetal.com/integrations) shows them as connected, and that you are signed in to the right organization.
+  </Accordion>
+  <Accordion title="Where to find MCP logs">
+    - **Claude Code:** run `claude --debug`, or `/mcp` to see the server's status.
+    - **Cursor:** **View** › **Output**, then pick **MCP Logs**.
+    - **VS Code:** run **MCP: List Servers**, select **antimetal** and choose **Show Output**.
+    - **Claude Desktop:** `~/Library/Logs/Claude/mcp*.log` on macOS, `%APPDATA%\Claude\logs` on Windows.
+    - **Codex:** `~/.codex/log/codex-tui.log`.
+  </Accordion>
+</AccordionGroup>
+
+## Security
+
+Connecting an AI tool to Antimetal gives it the access you have. Treat it like any tool you sign in to.
+
+- **Check the endpoint.** The only official Antimetal MCP server is `https://mcp.antimetal.com`. Don't connect to copies or proxies you don't control.
+- **Know what it can do.** Your agent can read Issues, Improvements, Patrol reports and evidence from your connected systems. It can also change things in Antimetal: Issue status and assignee, Patrols, rules and feedback. It cannot change your cloud or observability tools, and it never merges code.
+- **Keep a person in the loop.** Leave your client's tool approval on, so you confirm each write. Read diffs from `get_issue_fixes` before you apply them.
+- **Watch for prompt injection.** Reports contain text from your logs, alerts and tickets, which anyone who can write to those systems can influence. Don't let an agent act on instructions it finds in that data without your review. Be careful when the same session also has tools that can send data elsewhere.
+- **Use the narrowest credential.** Prefer OAuth for people. Give each automation its own API key, and revoke keys you no longer use.
+- **Audit and revoke.** Antimetal records the MCP client behind each link and feedback it leaves. To cut off a client, remove it in the client, sign out, or revoke its API key.
+
+See [Security and compliance](/admin/security) for how Antimetal handles your data.
+
+<Snippet file="need-help.mdx" />
