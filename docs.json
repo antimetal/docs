@@ -106,14 +106,8 @@
               "product/search",
               "product/issue-lifecycle",
               "product/fixes",
-              {
-                "group": "Patrols",
-                "pages": [
-                  "product/patrols",
-                  "product/patrol-workflows",
-                  "product/improvements"
-                ]
-              }
+              "product/patrols",
+              "product/patrol-workflows"
             ]
           },
           {
