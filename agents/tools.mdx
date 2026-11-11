@@ -12,6 +12,18 @@ These are the tools your agent gets when it connects to the [Antimetal MCP serve
 
 Every tool that takes an Issue or Improvement accepts its number (`412`), its UUID or its Antimetal URL.
 
+## Skills and docs
+
+Start here. These tools help your agent use the rest well.
+
+| Tool | Type | What it does | Try asking |
+| --- | --- | --- | --- |
+| `list_skills` | Read | Lists Antimetal's skills: step-by-step guides for jobs like running Patrols, each with when to use it. | "How should I use Antimetal for this?" |
+| `load_skill` | Read | Loads a skill's instructions, or one of its reference files. | "Load the Antimetal patrols skill." |
+| `search_documentation` | Read | Searches these docs and returns short excerpts with links to the Markdown pages. | "How do I set up the Datadog integration?" |
+
+Clients that support the MCP skills extension can also read each skill file as a resource, such as `skill://antimetal/patrols/SKILL.md`.
+
 ## Ask
 
 | Tool | Type | What it does | Try asking |
@@ -53,10 +65,11 @@ Patrols check part of your system on a schedule and report what they find. See [
 
 | Tool | Type | What it does | Try asking |
 | --- | --- | --- | --- |
+| `list_patrol_templates` | Read | Lists the templates you can create a Patrol from, with each one's default scope and the fields it uses. | "What kinds of patrols can I set up?" |
 | `list_patrols` | Read | Lists your Patrols. Archived ones on request. | "Which patrols do we have?" |
 | `get_patrol` | Read | Gets one Patrol's scope, schedule and instructions. | "What does the checkout service health check look at?" |
 | `create_patrol` | Write | Creates a Patrol from a template, with its scope, schedule and instructions. | "Create a daily database health check for orders-db in production." |
-| `run_patrol` | Write | Starts a run now, without changing the schedule. You can set a one-off time window. | "Run the error sweep now over the last 24 hours." |
+| `run_patrol` | Write | Starts a run now, without changing the schedule. You can set a one-off time window. Creating a Patrol does not start a run, so agents call this after `create_patrol`. | "Run the error sweep now over the last 24 hours." |
 | `list_patrol_runs` | Read | Lists a Patrol's runs, newest first. | "Did last night's patrol run finish?" |
 | `get_patrol_run` | Read | Gets a run's report: each finding, whether it is an Issue, an Improvement or healthy, and its fix. | "What did the last database health check find?" |
 | `list_events` | Read | Lists alerts and Patrol findings across all runs, with the Issues and Improvements they became. | "What did my patrols find this week that nobody picked up?" |

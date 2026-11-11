@@ -305,8 +305,9 @@ The server groups its tools by job. See [MCP tools](/agents/tools) for every too
 | Read an investigation | `get_issue_report`, `get_artifact` | "Explain the root cause of issue 412." |
 | Fix it | `get_issue_fixes`, `attach_link` | "Apply the fix for issue 412 and open a pull request." |
 | Start an investigation | `investigate_issue` | "Investigate the 502s on the payments API since 9am." |
-| Run Patrols | `list_patrols`, `create_patrol`, `run_patrol`, `get_patrol_run` | "Run a database health check on orders-db before Friday's launch." |
+| Run Patrols | `list_patrol_templates`, `create_patrol`, `run_patrol`, `get_patrol_run` | "Run a database health check on orders-db before Friday's launch." |
 | Steer Antimetal | `update_patrol`, `upsert_rule`, `submit_issue_feedback` | "Tell the error sweep to ignore the legacy billing service." |
+| Learn how | `list_skills`, `load_skill`, `search_documentation` | "How do I use Antimetal patrols from here?" |
 
 Your client decides when to call a tool. Most clients show each call and ask before running a tool that changes something.
 
